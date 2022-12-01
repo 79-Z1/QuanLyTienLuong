@@ -26,6 +26,6 @@ app.listen(port, async () => {
     console.log(`****************** Server up on http://localhost:${port}/ ******************`);
     // await sequelize.sync({ force: true });
     // console.log("Database synced");
-    await sequelize.authenticate();
-    console.log('Database saved');
+    // await sequelize.authenticate();
+    // console.log('Database saved');
 });
