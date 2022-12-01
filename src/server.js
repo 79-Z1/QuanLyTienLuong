@@ -4,7 +4,7 @@ const path = require('path');
 const app = express();
 const port = 3000;
 const route = require('./routes/index.router');
-const { sequelize} = require('./app/models/index');
+const { sequelize } = require('./app/models/index');
 
 // Static file
 app.use(express.static(path.join(__dirname, 'public')));
@@ -14,7 +14,21 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // set view engine express-handlebars
-app.engine('hbs', handlebars.engine({ extname: '.hbs' }));
+app.engine(
+	'hbs',
+	handlebars.engine({
+		extname: '.hbs',
+        helpers: {
+            ifCond: function(check, options) {
+                if(!check) {
+                    return options.inverse(this);
+                }
+                return options.fn(this);
+            }
+            
+        }
+	}),
+);
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources', 'views'));
 
@@ -22,10 +36,11 @@ app.set('views', path.join(__dirname, 'resources', 'views'));
 route(app);
 
 app.listen(port, async () => {
-    
-    console.log(`****************** Server up on http://localhost:${port}/ ******************`);
-    // await sequelize.sync({ force: true });
-    // console.log("Database synced");
-    // await sequelize.authenticate();
-    // console.log('Database saved');
+	console.log(
+		`****************** Server up on http://localhost:${port}/ ******************`,
+	);
+	// await sequelize.sync({ force: true });
+	// console.log("Database synced");
+	// await sequelize.authenticate();
+	// console.log('Database saved');
 });
