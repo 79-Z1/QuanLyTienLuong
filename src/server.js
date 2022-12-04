@@ -3,15 +3,18 @@ const handlebars = require('express-handlebars');
 const path = require('path');
 const app = express();
 const port = 3000;
+const cors = require('cors');
+
+
 const route = require('./routes/index.router');
 const { sequelize } = require('./app/models/index');
 
 // Static file
 app.use(express.static(path.join(__dirname, 'public')));
 
-// middleware xuly dữ liệu từ form
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors());
 
 // set view engine express-handlebars
 app.engine(
@@ -41,6 +44,6 @@ app.listen(port, async () => {
 	);
 	// await sequelize.sync({ force: true });
 	// console.log("Database synced");
-	// await sequelize.authenticate();
-	// console.log('Database saved');
+	await sequelize.authenticate();
+	console.log('Database saved');
 });

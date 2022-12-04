@@ -1,0 +1,47 @@
+body {
+	display: flex;
+	align-items: center;
+	background-color: #00E7FF;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+	border: 1px solid #ccc;
+	width: 1000px;
+	background-color: #fff;
+	border-radius: 50px
+}
+
+.banner {
+    width:500px;
+    margin-right: 30px;
+}
+
+.banner img {
+    border-radius: 0% 100% 2% 98% / 81% 17% 83% 19%;
+	width: 100%
+}
+
+#upload-form {
+	display: flex;
+	flex-direction: column;
+	width: 300px;
+	align-items: center;
+	justify-content: center;
+}
+
+
+#js-submit-btn {
+	background-color: #00E7FF;
+	border: none;
+}
+
+#js-submit-btn:hover {
+	opacity: 0.7;
+}
+
+.form-switch {
+    padding-left: 3em;
+}

@@ -2,9 +2,15 @@
   "development": {
     "username": "sa",
     "password": "hoatruong2002",
-    "database": "QuanLyCho",
+    "database": "QuanLyTienLuong",
     "host": "127.0.0.1",
-    "dialect": "mssql"
+    "dialect": "mssql",
+    "define": {
+      "id": false, 
+      "freezeTableName": true, 
+      "createdAt": false, 
+      "updatedAt": false 
+    }
   },
   "test": {
     "username": "root",
