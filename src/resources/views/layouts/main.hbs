@@ -28,14 +28,14 @@
 </head>
 
 <body>
-	<div id="app">
-		{{> header}}
-		<div id="container">
-			{{{body}}}
-		</div>
+	<!-- Dashboard -->
+<div class="d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary">
+	{{> header}}
+	<div class="h-screen flex-grow-1 overflow-y-lg-auto">
+		{{{body}}}
 		{{> footer}}
 	</div>
+</div>
 </body>
-
 
 </html>

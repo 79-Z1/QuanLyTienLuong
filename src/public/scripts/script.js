@@ -50,7 +50,7 @@ instance.getCookie = (cname) => {
 if (window.location.pathname !== '/auth/login' && !instance.getCookie('tai khoan')) {
 	window.location.replace('/auth/login');
 }
-console.log('aaaaaa');
+
 instance.deleteAllCookie = () => {
 	var cookies = document.cookie.split(';');
 	for (var i = 0; i < cookies.length; i++) {
@@ -61,3 +61,8 @@ instance.deleteAllCookie = () => {
 			name + '=;expires=' + new Date().toUTCString() + ';path=/';
 	}
 };
+
+//@ API FUNCT
+// instance.getNhanVienbyId = async (manv) => {
+// 	return (await instance.post(`/${manv}`)).data;
+// }

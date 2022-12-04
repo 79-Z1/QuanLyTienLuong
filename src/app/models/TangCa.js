@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
     },
     MaNV: 'VARCHAR(10)',
-    NgayTC: 'DATETIME',
+    NgayTC: 'DATE',
   }, {
     sequelize,
     modelName: 'TANGCA',

@@ -36,75 +36,136 @@
 					<div class="card card-style1 border-0">
 						<div class="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7">
 							<div class="row align-items-center">
-								<div class="col-lg-6 mb-4 mb-lg-0">
-									<img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="...">
-								</div>
-								<div class="col-lg-6 px-xl-10">
-									<div class="bg-secondary d-lg-inline-block py-1-9 px-1-9 px-sm-6 mb-1-9 rounded">
-										<h3 class="h2 text-white mb-0">John mark Doe Kyzer</h3>
-										<span class="text-primary">Coach</span>
+								<div class="col-lg-4 mb-4 mb-lg-0 profile-left-container">
+									<div class="bg-dark d-lg-inline-block py-1-9 px-1-9 px-sm-6 mb-1-9 rounded w-100">
+										<h3 class="h2 text-white mb-0">{{nhanvien.HoTen}}</h3>
+										<h5 class="text-primary">{{nhanvien.TenCV}}</h5>
 									</div>
+									{{#ifCond nhanvien.GioiTinh 'Nữ'}}
+										<img src="/img/avatar-female.jpg" class="avatar" alt="female">
+									{{/ifCond}}
+									{{#ifCond nhanvien.GioiTinh 'Nam'}}
+										<img src="/img/avatar-male.jpg" class="avatar" alt="male">
+									{{/ifCond}}
+								</div>
+								<div class="col-lg-8 px-xl-10 profile-right-container">
 									<ul class="list-unstyled mb-1-9">
-										<li class="mb-2 mb-xl-3 display-28"><span
-												class="display-26 text-secondary me-2 font-weight-600">Position:</span>
-											Coach</li>
-										<li class="mb-2 mb-xl-3 display-28"><span
-												class="display-26 text-secondary me-2 font-weight-600">Experience:</span>
-											10 Years</li>
-										<li class="mb-2 mb-xl-3 display-28"><span
-												class="display-26 text-secondary me-2 font-weight-600">Email:</span>
-											edith@mail.com</li>
-										<li class="mb-2 mb-xl-3 display-28"><span
-												class="display-26 text-secondary me-2 font-weight-600">Website:</span>
-											www.example.com</li>
-										<li class="display-28"><span
-												class="display-26 text-secondary me-2 font-weight-600">Phone:</span> 507
-											- 541 - 4567</li>
+										
+										<li class="mb-2 mb-xl-3 display-28">
+											<span class="display-26 text-secondary me-2 font-weight-600">
+											Mã nhân viên:</span>
+											{{nhanvien.MaNV}}
+										</li>
+										
+										<li class="mb-2 mb-xl-3 display-28">
+											<span class="display-26 text-secondary me-2 font-weight-600">
+											Phòng:</span>{{nhanvien.TenPhong}}
+										</li>
+										<li class="mb-2 mb-xl-3 display-28">
+											<span class="display-26 text-secondary me-2 font-weight-600">
+											Giới tính:</span> {{nhanvien.GioiTinh}} </li>
+										<li class="mb-2 mb-xl-3 display-28">
+											<span class="display-26 text-secondary me-2 font-weight-600">
+											Ngày sinh:</span>{{nhanvien.NgaySinh}} </li>
+										<li class="mb-2 mb-xl-3 display-28">
+											<span class="display-26 text-secondary me-2 font-weight-600">
+											Địa chỉ:</span> {{nhanvien.DiaChi}}</li>
+										<li class="mb-2 mb-xl-3 display-28">
+											<span class="display-26 text-secondary me-2 font-weight-600">
+											Số tài khoản:</span> {{nhanvien.STK}}</li>
+										<li class="mb-2 mb-xl-3 display-28">
+											<span class="display-26 text-secondary me-2 font-weight-600">
+											CMND:</span>{{nhanvien.CMND}}</li>
+										<li class="mb-2 mb-xl-3 display-28">
+											<span class="display-26 text-secondary me-2 font-weight-600">
+											Số bảo hiểm:</span>{{nhanvien.SoBH}}</li>
+										<li class="mb-2 mb-xl-3 display-28">
+											<span class="display-26 text-secondary me-2 font-weight-600">
+											Số điện thoại:</span> {{nhanvien.SDT}}</li>
 									</ul>
 								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-12">
-					<table class="table">
+								<div class="col-lg-12 grid-table">
+					<table class="table ">
 						<thead>
 							<tr>
-								<th scope="col">#</th>
-								<th scope="col">First</th>
-								<th scope="col">Last</th>
-								<th scope="col">Handle</th>
+								<th scope="col">Tháng</th>
+								<th scope="col">Lương cơ bản</th>
+								<th scope="col">Tăng ca</th>
+								<th scope="col">Bảo hiểm xã hội</th>
+								<th scope="col">Thuế</th>
+								<th scope="col">Lương thực nhận</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<th scope="row">1</th>
-								<td>Mark</td>
-								<td>Otto</td>
-								<td>@mdo</td>
+								<td>15.000.000đ</td>
+								<td>700.000đ</td>
+								<td>400.000đ</td>
+								<td>400.000đ</td>
+								<td>13.500.000đ</td>
+			
 							</tr>
 							<tr>
 								<th scope="row">2</th>
-								<td>Jacob</td>
-								<td>Thornton</td>
-								<td>@fat</td>
+								<td>15.000.000đ</td>
+								<td>700.000đ</td>
+								<td>400.000đ</td>
+								<td>400.000đ</td>
+								<td>13.500.000đ</td>
 							</tr>
 							<tr>
 								<th scope="row">3</th>
-								<td colspan="2">Larry the Bird</td>
-								<td>@twitter</td>
+								<td>15000000đ</td>
+								<td>700.000đ</td>
+								<td>400.000đ</td>
+								<td>400.000đ</td>
+								<td>13.500.000đ</td>
 							</tr>
+							
 						</tbody>
 					</table>
 
-					<div class="option-buttons d-flex justify-content-center">
-						<button type="button" class="btn btn-primary">NÚT 1</button>
-						<button type="button" class="btn btn-primary">NÚT 2</button>
-						<button type="button" class="btn btn-primary">NÚT 3</button>
+					<div class="option-buttons d-flex ">
+						<button type="button" class="btnn "data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ứng lương</button>
+						<button type="button" class="btnn ">khiếu nại</button>
+						<button type="button" class="btnn ">Xem bảng chấm công</button>
+						<button type="button" class="btnn ms-auto">Đăng xuất</button>
+						<!-- Button trigger modal -->
+
+						<!-- Modal -->
+						<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="staticBackdropLabel">Phiếu ứng lương</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<h3>Nhập số tiền</h3>
+								<input type="number"id="replyNumber" min="1000000" data-bind="value:replyNumber" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+								<h3>Lý do</h3>
+								<textarea></textarea>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btnn " data-bs-dismiss="modal">Close</button>
+								<button type="button" class="btnn ">Understood</button>
+							</div>
+							</div>
+						</div>
+						</div>
+					</div>
+					
+				</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 </body>
-
 </html>
+
+<script>
+	
+</script>

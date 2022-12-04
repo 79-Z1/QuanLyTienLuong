@@ -14,8 +14,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   ChucVu.init({
-    MaPhong: {
-      type: 'VARCHAR(5)',
+    MaCV: {
+      type: 'VARCHAR(10)',
       primaryKey: true,
     },
     TenCV: 'NVARCHAR(25)',

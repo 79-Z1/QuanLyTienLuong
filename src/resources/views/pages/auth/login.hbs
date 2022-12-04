@@ -30,18 +30,18 @@
 	<div class='banner'>
 		<img src='/img/login-banner1.jpg' alt='' />
 	</div>
-	<form id='upload-form' onsubmit='uploadVideo()'>
+	<form id='upload-form'>
 		<h1>LOGIN</h1>
 		<div class='mb-3 w-100'>
-			<label for='username' class='form-label username'>Username</label>
-			<input type='text' class='form-control' id='username' />
+			<label for='username' class='form-label '>Username</label>
+			<input type='text' class='form-control username' id='username' />
 		</div>
 		<div class='mb-3 w-100'>
 			<label for='password' class='form-label'>Password</label>
-			<input type='text' class='form-control password' id='password' />
+			<input type='password' class='form-control password' id='password' />
 		</div>
 
-		<button type='submit' class='btn btn-primary w-100' id='js-submit-btn'>
+		<button type='submit' class='btn btn-primary w-100' id='submit-btn'>
 			Submit
 		</button>
 	</form>
@@ -50,9 +50,9 @@
 
 <script type='text/javascript'>
 	let submitBtn = document.getElementById("submit-btn")
-	let username = $('.username');
-	let password = $('.password');
-
+	let username = $('#username');
+	let password = $('#password');
+	console.log(username, password)
 
 	if (submitBtn) {
 		submitBtn.addEventListener("click", async (e) => {
@@ -63,10 +63,13 @@
 			if (code === 200 && msg === "success") {
 				instance.setCookie('tai khoan', taikhoan);
 				instance.setCookie('loai', loai);
-				console.log(taikhoan)
+
 				if (loai === 'KT') window.location.replace("/admin/ketoan");
 				else if (loai === 'QL') window.location.replace("/admin/quanly");
-				else window.location.replace("/");
+				else {
+					const manv = instance.getCookie('tai khoan');
+					window.location.replace(`/${manv}`);
+				}
 			} else {
 				alert('Sai username hoac password');
 			}

@@ -22,8 +22,8 @@ app.engine(
 	handlebars.engine({
 		extname: '.hbs',
         helpers: {
-            ifCond: function(check, options) {
-                if(!check) {
+            ifCond: function(check,value, options) {
+                if(check !== value) {
                     return options.inverse(this);
                 }
                 return options.fn(this);
