@@ -1,0 +1,97 @@
+<div class="card shadow border-0 mb-7 mt-5">
+	<div class="card-header">
+		<h5 class="mb-0">BẢNG ỨNG LƯƠNG</h5>
+	</div>
+	<div class="table-responsive">
+		<table class="table table-hover table-nowrap">
+			<thead class="thead-light">
+				<tr>
+					<th scope="col">mã phiếu</th>
+					<th scope="col">mã nhân viên</th>
+					<th scope="col">ngày ứng</th>
+					<th scope="col">lý do</th>
+					<th scope="col">số tiền</th>
+					<th scope="col">xét duyệt</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>UL001</td>
+					<td>NV001</td>
+					<td>2022/1/22</td>
+					<td>mổ ruột thừa</td>
+					<td>3.000.000</td>
+					<td><button class="btn btn-sm btn-neutral" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Duyệt</button></td>
+					<td class="text-end">
+                        <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+						<i class="bi bi-trash"></i>
+						</button>
+					</td>
+				</tr>
+                <tr>
+					<td>UL002</td>
+					<td>NV002</td>
+					<td>2022/1/18</td>
+					<td>khám trĩ</td>
+					<td>4.000.000</td>
+					<td><button class="btn btn-sm btn-neutral" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Duyệt</button></td>
+					<td class="text-end">
+                        <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+						<i class="bi bi-trash"></i>
+						</button>
+					</td>
+				</tr>
+                <tr>
+					<td>UL003</td>
+					<td>NV003</td>
+					<td>2022/3/18</td>
+					<td>khám trĩ</td>
+					<td>500.000</td>
+					<td><button class="btn btn-sm btn-neutral" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Duyệt</button></td>
+					<td class="text-end">
+                        <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+						<i class="bi bi-trash"></i>
+						</button>
+					</td>
+				</tr>
+                <!-- Modal1 -->
+					<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="staticBackdropLabel">Xác nhận</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<h3>Bạn có chắc chắn muốn duyệt không</h3>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btnn " data-bs-dismiss="modal">Close</button>
+								<button type="button" class="btnn " data-bs-dismiss="modal">Yes</button>
+							</div>
+							</div>
+						</div>
+					</div>
+                <!-- Modal2 -->
+					<div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+						<div class="modal-dialog test-modal">
+							<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="staticBackdropLabel">Xác nhận</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<h3>Bạn có chắc chắn muốn xóa phiếu ứng lương này không</h3>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btnn " data-bs-dismiss="modal">Close</button>
+								<button type="button" class="btnn " data-bs-dismiss="modal">Yes</button>
+							</div>
+							</div>
+						</div>
+					</div>
+			</tbody>
+		</table>
+	</div>
+</div>

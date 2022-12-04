@@ -1,1 +1,264 @@
-<h1> Hello bro</h1>
+<div class="option-buttons d-flex flex-row-reverse ">
+						<button type="button" class="btnn "data-bs-toggle="modal" data-bs-target="#staticBackdrop">Xóa bảng lương</button>
+						<button type="button" class="btnn "data-bs-toggle="modal" data-bs-target="#staticBackdrop1">Sửa bảng lương</button>
+						<button type="button" class="btnn ">Lập bảng lương</button>
+                        {{!--Start Modal Xóa bảng lương --}}
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="staticBackdropLabel">Xóa bảng lương</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<h1>Bạn có chắc muốn xóa bảng lương này?</h1>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btnn " data-bs-dismiss="modal">No</button>
+								<button type="button" class="btnn " data-bs-dismiss="modal">Yes</button>
+							</div>
+							</div>
+						</div>
+						</div>
+                        {{!--End Modal Xóa bảng lương --}}
+                        {{!--Start Modal Sửa bảng lương  --}}
+                        <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+						<div class="modal-dialog test-modal">
+							<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="staticBackdropLabel1">Sửa bảng lương</h5>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+                                    <div class="card shadow border-0 mb-7 mt-5  ">
+                                        <div class="card-header ">
+                                            <h5 class="mb-0">BẢNG LƯƠNG THÁNG 1</h5>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table table-hover table-nowrap ">
+                                                <thead >
+                                                    <tr>
+                                                        <th scope="col">mã nhân viên</th>
+                                                        <th scope="col">họ tên</th>
+                                                        <th scope="col">chức vụ</th>
+                                                        <th scope="col">phòng</th>
+                                                        <th scope="col">lương</th>
+                                                        <th></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody >
+                                                    <tr>
+                                                        <td>NV003</td>
+                                                        <td>Nguyễn Thị Diễm Kiều</td>
+                                                        <td>quản lý</td>
+                                                        <td>Quản lý</td>
+                                                        <td>10.000.000đ</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>NV003</td>
+                                                        <td>Nguyễn Thị Diễm Kiều</td>
+                                                        <td>quản lý</td>
+                                                        <td>Quản lý</td>
+                                                        <td>10.000.000đ</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>NV003</td>
+                                                        <td>Nguyễn Thị Diễm Kiều</td>
+                                                        <td>quản lý</td>
+                                                        <td>Quản lý</td>
+                                                        <td>10.000.000đ</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>NV003</td>
+                                                        <td>Nguyễn Thị Diễm Kiều</td>
+                                                        <td>quản lý</td>
+                                                        <td>Quản lý</td>
+                                                        <td>10.000.000đ</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>NV003</td>
+                                                        <td>Nguyễn Thị Diễm Kiều</td>
+                                                        <td>quản lý</td>
+                                                        <td>Quản lý</td>
+                                                        <td>10.000.000đ</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>NV003</td>
+                                                        <td>Nguyễn Thị Diễm Kiều</td>
+                                                        <td>quản lý</td>
+                                                        <td>Quản lý</td>
+                                                        <td>10.000.000đ</td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btnn " data-bs-dismiss="modal">Hủy sửa đổi</button>
+								<button type="button" class="btnn " data-bs-dismiss="modal">Xác nhận sửa đổi</button>
+							</div>
+							</div>
+						</div>
+						</div>
+                        {{!--End Modal Sửa bảng lương --}}
+</div>
+<div class="single-item ">
+    {{!-- Tháng 1 --}}
+    <div class="card shadow border-0 mb-7 mt-5  ">
+        <div class="card-header ">
+            <h5 class="mb-0">BẢNG LƯƠNG THÁNG 1</h5>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover table-nowrap ">
+                <thead >
+                    <tr>
+                        <th scope="col">mã nhân viên</th>
+                        <th scope="col">họ tên</th>
+                        <th scope="col">chức vụ</th>
+                        <th scope="col">phòng</th>
+                        <th scope="col">lương</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody >
+                    <tr>
+                        <td>NV003</td>
+                        <td>Nguyễn Thị Diễm Kiều</td>
+                        <td>quản lý</td>
+                        <td>Quản lý</td>
+                        <td>10.000.000đ</td>
+                    </tr>
+                    <tr>
+                        <td>NV003</td>
+                        <td>Nguyễn Thị Diễm Kiều</td>
+                        <td>quản lý</td>
+                        <td>Quản lý</td>
+                        <td>10.000.000đ</td>
+                    </tr>
+                    <tr>
+                        <td>NV003</td>
+                        <td>Nguyễn Thị Diễm Kiều</td>
+                        <td>quản lý</td>
+                        <td>Quản lý</td>
+                        <td>10.000.000đ</td>
+                    </tr>
+                    <tr>
+                        <td>NV003</td>
+                        <td>Nguyễn Thị Diễm Kiều</td>
+                        <td>quản lý</td>
+                        <td>Quản lý</td>
+                        <td>10.000.000đ</td>
+                    </tr>
+                    <tr>
+                        <td>NV003</td>
+                        <td>Nguyễn Thị Diễm Kiều</td>
+                        <td>quản lý</td>
+                        <td>Quản lý</td>
+                        <td>10.000.000đ</td>
+                    </tr>
+                    <tr>
+                        <td>NV003</td>
+                        <td>Nguyễn Thị Diễm Kiều</td>
+                        <td>quản lý</td>
+                        <td>Quản lý</td>
+                        <td>10.000.000đ</td>
+                    </tr>
+
+                </tbody>
+            </table>
+	    </div>
+    </div>
+    {{!-- Tháng 2 --}}
+    <div class="card shadow border-0 mb-7 mt-5 khongbietdatten">
+        <div class="card-header ">
+            <h5 class="mb-0">LẬP BẢNG LƯƠNG THÁNG 2</h5>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover table-nowrap">
+                <thead >
+                    <tr>
+                        <th scope="col">mã nhân viên</th>
+                        <th scope="col">họ tên</th>
+                        <th scope="col">chức vụ</th>
+                        <th scope="col">phòng</th>
+                        <th scope="col">lương</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>NV003</td>
+                        <td>Nguyễn Thị Diễm Kiều</td>
+                        <td>quản lý</td>
+                        <td>Quản lý</td>
+                        <td>10.000.000đ</td>
+                    </tr>
+                    <tr>
+                        <td>NV004</td>
+                        <td>Tony Hòe</td>
+                        <td>Kế toán</td>
+                        <td>Kế toán</td>
+                        <td>12.000.000đ</td>
+                    </tr>
+                    <tr>
+                        <td>NV005</td>
+                        <td>Nguyễn Thị Diễm </td>
+                        <td>Lao công</td>
+                        <td>lao công</td>
+                        <td>5.000.000đ</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {{!-- Tháng 3 --}}
+    <div class="card shadow border-0 mb-7 mt-5 khongbietdatten">
+        <div class="card-header ">
+            <h5 class="mb-0">LẬP BẢNG LƯƠNG THÁNG 3</h5>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover table-nowrap">
+                <thead >
+                    <tr>
+                        <th scope="col">mã nhân viên</th>
+                        <th scope="col">họ tên</th>
+                        <th scope="col">chức vụ</th>
+                        <th scope="col">phòng</th>
+                        <th scope="col">lương</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>NV003</td>
+                        <td>Nguyễn Thị Diễm Kiều</td>
+                        <td>quản lý</td>
+                        <td>Quản lý</td>
+                        <td>10.000.000đ</td>
+                    </tr>
+                    <tr>
+                        <td>NV004</td>
+                        <td>Tony Hòe</td>
+                        <td>Kế toán</td>
+                        <td>Kế toán</td>
+                        <td>12.000.000đ</td>
+                    </tr>
+                    <tr>
+                        <td>NV005</td>
+                        <td>Nguyễn Thị Diễm </td>
+                        <td>Lao công</td>
+                        <td>lao công</td>
+                        <td>5.000.000đ</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function(){
+        $('.single-item').slick();
+    });
+</script>

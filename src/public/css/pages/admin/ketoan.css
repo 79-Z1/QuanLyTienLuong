@@ -23,4 +23,6 @@
     background-color: #7b6bff;
 }
 
-
+.input-group-append {
+    display: none;
+}

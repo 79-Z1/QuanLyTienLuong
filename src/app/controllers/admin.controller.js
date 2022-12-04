@@ -9,7 +9,7 @@ class AdminController {
         FROM NHANVIEN nv
         JOIN CHUCVU cv ON nv.MaChucVu = cv.MaCV
         JOIN PHONGBAN pb ON nv.MaPhong = pb.MaPhong`
-        
+
 		try {
 			const nhanviens = await sequelize.query(queryGetAllNV, {
 				type: QueryTypes.SELECT,
@@ -22,7 +22,7 @@ class AdminController {
 
             res.render('pages/admin/ketoan', { 
                 style: '/pages/admin/ketoan.css',
-                nhanviens: nhanviens
+                nhanviens: nhanviens,
             });
 		} catch (err) {
 			return console.log(err.message);
@@ -38,6 +38,24 @@ class AdminController {
     async showLapBangLuong(req, res) {
         res.render('pages/admin/lap-bangluong', { 
             style: '/pages/admin/lap-bangluong.css',
+        });
+    }
+
+    async showUngLuong(req, res) {
+        res.render('pages/admin/ung-luong', { 
+            style: '/pages/admin/ung-luong.css',
+        });
+    }
+
+    async showKhieuNai(req, res) {
+        res.render('pages/admin/khieu-nai', { 
+            style: '/pages/admin/khieu-nai.css',
+        });
+    }
+
+    async showTinhLuong(req, res) {
+        res.render('pages/admin/tinh-luong', { 
+            style: '/pages/admin/tinh-luong.css',
         });
     }
 

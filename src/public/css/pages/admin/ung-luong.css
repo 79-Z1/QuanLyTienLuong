@@ -1,0 +1,23 @@
+.btnn{
+    display: inline-block;
+    padding: 10px 16px;
+    color: white;
+    background-color: #000;
+    text-decoration: none;
+    margin: 20px;
+}
+.btnn:hover{
+    /* border: 2px solid #ccc; */
+    background-color: #ccc;
+    color: #000;
+    cursor: pointer;
+}
+
+.btn-neutral:focus {
+    background-color: #fff;
+    outline: 0ch;
+}
+
+button:focus:not(:focus-visible) {
+    outline: 0 !important;
+}

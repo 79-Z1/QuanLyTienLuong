@@ -1,0 +1,51 @@
+.single-item {
+
+}
+
+.slick-prev {
+ 
+}
+.test-modal {
+    max-width: 1200px!important;
+}
+.slick-prev::before {
+
+    /* background-color: #000; */
+}
+.thu-nho-luong{
+    margin-left: 22px;
+    margin-right: 30px;
+}
+.slick-next:before, .slick-prev:before {
+    font-family: slick;
+    font-size: 50px;
+    line-height: 1;
+    height: 10px;
+    opacity: .75;
+    color: #000;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.khongbietdatten{
+    max-height: 700px;
+}
+/* .slick-list {
+    overflow: auto;
+} */
+.slick-next {
+    right: 2;
+}
+.btnn{
+    /* display: inline-block; */
+    padding: 10px 16px;
+    color: white;
+    background-color: #000;
+    text-decoration: none;
+    margin: 20px;
+}
+.btnn:hover{
+    /* border: 2px solid #ccc; */
+    background-color: #ccc;
+    color: #000;
+    cursor: pointer;
+}

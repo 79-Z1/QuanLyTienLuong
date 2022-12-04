@@ -27,9 +27,20 @@ app.engine(
                     return options.inverse(this);
                 }
                 return options.fn(this);
-            }
-            
-        }
+            },
+			ifNotEmpty: function(check, options) {
+				if(typeof check !== 'undefined' && check.length !== 0) {
+					return options.fn(this);
+                }
+				return options.inverse(this);
+			},
+			ifEmpty: function(check, options) {
+				if(typeof check !== 'undefined' && check.length === 0) {
+					return options.fn(this);
+                }
+				return options.inverse(this);
+			}
+        },
 	}),
 );
 app.set('view engine', 'hbs');

@@ -30,6 +30,26 @@ class NhanVienController {
 			return console.log(err.message);
 		}   
     }
+
+    async searchNhanVien(req, res) {
+        const value = req.query.search;
+        value.toLowerCase().trim();
+        
+        const sqlSearchNV = `EXEC PROC_SEARCH N'%${value}%'`
+		try {
+			const nhanviens = await sequelize.query(sqlSearchNV, {
+				type: QueryTypes.EXEC,
+			});
+
+            res.render('pages/admin/ketoan', { 
+                style: '/pages/admin/ketoan.css',
+                nhanviens: nhanviens[0],
+            });
+
+		} catch (err) {
+			return console.log(err.message);
+		}
+    }
 }
 
 module.exports = new NhanVienController;
