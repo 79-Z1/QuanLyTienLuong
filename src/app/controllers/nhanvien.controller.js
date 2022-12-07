@@ -6,18 +6,11 @@ const query = require('../services/query.service');
 class NhanVienController {
     async index(req, res, next) {
         const manv = req.params.manv;
+        const month = new Date().getMonth() + 1;
         const procGetNhanVienByMaNV = `EXEC PROC_GET_ALL_NV_BY_MANV '${manv}'`;
-        const procLuongTheoThanng = 
-        `declare @HSL float 
-        declare @THUE decimal
-        declare @TU decimal
-        declare @BH decimal
-        declare @SONC int
-        declare @LTL decimal
-        declare @TTC decimal
-        exec pr_LuongTheoThang 12,2022,'${manv}',@HSL output, @SONC output, @TU output, @TTC output,@BH output, @THUE output,@LTL output
-        
-        select @HSL as 'HeSoLuong',@SONC as 'SoNgayCong',@TU as 'TamUng',@TTC as 'TienTangCa',@BH as 'BaoHiem',@THUE as 'Thue',@LTL as 'TienThucLinh'`;
+        const procLuongTheoThanng = query.procLuongTheoThanng(manv);
+        const getChamCongByMaNV = `SELECT TrangThai,Ngay,NghiHL FROM CHAMCONG WHERE MaNV = '${manv}' AND MONTH(Ngay) = ${month}`;
+
         try {
 			const data = await sequelize.query(procGetNhanVienByMaNV, {
 				type: QueryTypes.EXEC,
@@ -26,6 +19,10 @@ class NhanVienController {
             const dataLuong = await sequelize.query(procLuongTheoThanng, {
                 type: QueryTypes.SELECT,
             })
+
+            const chamCong = await sequelize.query(getChamCongByMaNV, {
+                type: QueryTypes.SELECT,
+            });
 
             //check giới tính
             let nhanvien = data.flat();
@@ -36,7 +33,8 @@ class NhanVienController {
                 style: 'pages/nhanvien/home.css',
                 layout: false,
                 nhanvien: nhanvien,
-                dataLuong: dataLuong[0]
+                dataLuong: dataLuong[0],
+                chamCong
             });
 		} catch (err) {
 			return console.log(err.message);
@@ -102,7 +100,6 @@ class NhanVienController {
         const maDon = `KN${common.random100To999()}`;
         const today = new Date().toLocaleDateString();
         
-        console.log({manv,lydo,maDon,today});
         const insertKhieuNai = 
         `insert into DONKHIEUNAI(MaDon,MaNV,ThoiGian,LyDo,GiaiQuyet)
 		values ('${maDon}','${manv}','${today}',N'${lydo}',null)`
@@ -122,28 +119,22 @@ class NhanVienController {
 			return console.log(err.message);
 		}
     }
-    // async taoNhanvien(req, res) {
-    //     const nhanvien = req.body;
-    //     const sqlGetNhanVienBymaNV = 
-    //     `SELECT MaNV, concat(HoLot,+' '+TenNV)  as HoTen, cv.TenCV, pb.TenPhong, 
-    //     nv.GioiTinh, nv.SDT, nv.NgaySinh, nv.DiaChi, nv.STK, nv.CMND, nv.SoBH
-    //     FROM NHANVIEN nv
-    //     JOIN CHUCVU cv ON nv.MaChucVu = cv.MaCV
-    //     JOIN PHONGBAN pb ON nv.MaPhong = pb.MaPhong
-    //     WHERE MaNV = '${manv}'`;
+   
+    // async showChamCong(req, res, next) {
+    //     const manv = req.params.manv;
+    //     const month = new Date().getMonth();
 
+    //     const getChamCongByMaNV = `SELECT TrangThai,Ngay,NghiHL FROM CHAMCONG WHERE MaNV = '${manv}' AND MONTH(Ngay) = ${month}`;
+    
+    //     const chamCong = await sequelize.query(getChamCongByMaNV, {
+    //         type: QueryTypes.SELECT,
+    //     });
     //     try {
-	// 		const nhanvien = await sequelize.query(sqlGetNhanVienBymaNV, {
-	// 			type: QueryTypes.SELECT,
-	// 		});
 
-    //         //check giới tính
-    //         nhanvien[0].GioiTinh = await common.checkGioiTinh(nhanvien[0].GioiTinh);
-
-	// 		res.render('pages/nhanvien/home', { 
+    //         res.render('pages/nhanvien/home', { 
     //             style: 'pages/nhanvien/home.css',
     //             layout: false,
-    //             nhanvien: nhanvien[0]
+    //             chamCong: chamCong
     //         });
 	// 	} catch (err) {
 	// 		return console.log(err.message);

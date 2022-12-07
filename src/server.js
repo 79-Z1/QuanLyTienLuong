@@ -49,6 +49,24 @@ app.engine(
 					return options.fn(this);
 				}
 			},
+			toNghiLam: function(status,options) {
+				if(status && status === true) {
+					return 'Làm'
+				} else if(status=== false) {
+					return 'Nghỉ'
+				} else {
+					return options.fn(this);
+				}
+			},
+			converTo0: function(num,options) {
+				if(num === null) {
+					return null
+				} else if(num !== null) {
+					return 'Có'
+				} else {
+					return options.fn(this);
+				}
+			},
 			toUpperCase: function(text,options) {
 				if(text) {
 					return text.toUpperCase();

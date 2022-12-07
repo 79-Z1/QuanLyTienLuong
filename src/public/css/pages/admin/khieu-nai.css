@@ -27,3 +27,11 @@
     background-color: #ff1515;
     border-color: #e7eaf0;
 }
+
+.duyet-container {
+    text-align: start !important;
+}
+
+.text-end {
+    text-align: start !important;
+}

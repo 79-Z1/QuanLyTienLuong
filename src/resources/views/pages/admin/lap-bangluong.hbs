@@ -1,9 +1,9 @@
 <div class="option-buttons d-flex flex-row-reverse ">
-    <button type="button" class="btn btn-outline-success color-btn p-2" data-bs-toggle="modal"
+    <button type="button" class="btn  color-btn p-2" data-bs-toggle="modal"
         data-bs-target="#staticBackdrop" id="button-delete">Xóa bảng lương</button>
-    <button type="button" class="btn btn-outline-success color-btn p-2" data-bs-toggle="modal"
+    <button type="button" class="btn  color-btn p-2" data-bs-toggle="modal"
         data-bs-target="#staticBackdrop1" id="button-modify">Sửa bảng lương</button>
-    <button type="button" class="btn btn-outline-success color-btn p-2" data-bs-toggle="modal"
+    <button type="button" class="btn  color-btn p-2" data-bs-toggle="modal"
         data-bs-target="#staticBackdrop2" id="button-insert">Thêm bảng lương</button>
     {{!--Start Modal Xóa bảng lương --}}
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -18,8 +18,8 @@
                     <h1 >Bạn có chắc muốn xóa bảng lương này?</h1>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-success color-btn p-2 " data-bs-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-outline-success color-btn p-2 " data-bs-dismiss="modal">Yes</button>
+                    <button type="button" class="btn  color-btn p-2 " data-bs-dismiss="modal">No</button>
+                    <button type="button" class="btn  color-btn p-2 xoa-btn" data-bs-dismiss="modal">Yes</button>
                 </div>
             </div>
         </div>
@@ -38,8 +38,8 @@
                     <h1>Thêm bảng lương tháng 12</h1>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-success color-btn p-2 " data-bs-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-outline-success color-btn p-2 " data-bs-dismiss="modal">Yes</button>
+                    <button type="button" class="btn  color-btn p-2 " data-bs-dismiss="modal">No</button>
+                    <button type="button" class="btn  color-btn p-2 themBangLuong-btn" data-bs-dismiss="modal">Yes</button>
                 </div>
             </div>
         </div>
@@ -56,10 +56,10 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                        <div class="card-header ">
+                        <div  class="card-header ">
                             <h5 class="mb-0">BẢNG LƯƠNG THÁNG 11</h5>
                         </div>
-                        <div class="table-responsive">
+                        <div style=" height: 450px;" class="table-responsive">
                             <table class="table table-hover table-nowrap ">
                                 <thead>
                                     <tr>
@@ -676,9 +676,9 @@
                         </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-success color-btn p-2" data-bs-dismiss="modal">Hủy sửa
+                    <button type="button" class="btn  color-btn p-2" data-bs-dismiss="modal">Hủy sửa
                         đổi</button>
-                    <button type="button" class="btn btn-outline-success color-btn p-2" data-bs-dismiss="modal">Xác nhận sửa
+                    <button type="button" class="btn  color-btn p-2" data-bs-dismiss="modal">Xác nhận sửa
                         đổi</button>
                 </div>
             </div>
@@ -687,7 +687,7 @@
     {{!--End Modal Sửa bảng lương --}}
 </div>
 <!-- Carousel 1 -->
-<div id="carouselExampleControls" class="carousel slide"   data-bs-ride="carousel" data-interval="false">
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
   <div class="carousel-inner">
     <div class="carousel-item active" >
       
@@ -2068,6 +2068,52 @@
             </div>
         </div>
     </div>
+    {{#if bangLuong }}
+    <div class="carousel-item">
+      {{!-- Tháng 12 --}}
+        <div class="card shadow border-0 mb-7 mt-5  d-block"style="width:100%">
+            <div class="card-header ">
+                <h5 class="mb-0" id="t-10">BẢNG LƯƠNG THÁNG 12</h5>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover table-nowrap ">
+                    <thead>
+                        <tr>
+                            <th scope="col">mã nhân viên</th>
+					        <th scope="col">họ tên</th>
+					        <th scope="col">chức vụ</th>
+					        <th scope="col">phòng</th>
+					        <th scope="col">hệ số lương</th>
+					        <th scope="col">ngày công</th>
+					        <th scope="col">tăng ca</th>
+					        <th scope="col">tiền tạm ứng</th>
+					        <th scope="col">bảo hiểm</th>
+					        <th scope="col">thuế</th>
+					        <th scope="col">thực lĩnh</th>  
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each bangLuong }}
+                        <tr>
+                            <td>{{#toUpperCase this.MaNV}}{{/toUpperCase}}</td>
+                            <td>{{this.HoTen}}</td>
+                            <td>{{this.TenChucVu}}</td>	
+                            <td>{{this.TenPhong}}</td>				
+                            <td>{{this.HeSoLuong}}</td>					
+                            <td>{{this.SoNgayCong}}</td>
+                            <td>{{#toVND this.TangCa}}{{/toVND}}</td>
+                            <td>{{#toVND this.TamUng}}{{/toVND}}</td>
+                            <td>{{#toVND this.BaoHiem}}{{/toVND}}</td>
+                            <td>{{#toVND this.Thue}}{{/toVND}}</td>
+                            <td>{{#toVND this.ThucLinh}}{{/toVND}}</td>
+                        </tr>
+                         {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    {{/if }}
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -2083,17 +2129,21 @@
     var allCarousel = $(".carousel-item");
     const thang = '';
     
-    $("#button-delete").click(function(){
+    $(".xoa-btn").click(function(){
         allCarousel.map((index,div) => {
             if(div.classList.contains('active')) {
                 div.style.display = 'none';
-                allCarousel[index+1].addClass('active');
+                $(".carousel").carousel("next");
             }
         })
     });
 
+    $("#modify").click(function(){
+        $(".change").attr("contenteditable","true");
+    });
 
-$("#modify").click(function(){
-  $(".change").attr("contenteditable","true");
-});
+    $('.themBangLuong-btn').click(function(){
+        window.location.replace('/admin/lap-bang-luong/new');
+    })
+
 </script>

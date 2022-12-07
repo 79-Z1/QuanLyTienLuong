@@ -8,6 +8,7 @@ router.get('/quanly', adminController.showCungCapTTNV);
 
 router.get('/ketoan', adminController.indexKT); 
 router.get('/lap-bang-luong', adminController.showLapBangLuong); 
+router.get('/lap-bang-luong/new', adminController.TaoBangLuong); 
 router.get('/ung-luong', adminController.showUngLuong); 
 router.get('/khieu-nai', adminController.showKhieuNai); 
 router.get('/tinh-luong', adminController.showTinhLuong); 

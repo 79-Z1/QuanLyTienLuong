@@ -9,10 +9,6 @@
 .text-end {
     text-align: left!important;
 }
-.single-item {
-
-}
-
 
 .test-modal {
     max-width: 1300px!important;
@@ -65,6 +61,7 @@
 }
 .color-btn:hover {
     background-color:#7b6bff;
+    color: #fff;
 }
 .btnn:hover{
     /* border: 2px solid #ccc; */

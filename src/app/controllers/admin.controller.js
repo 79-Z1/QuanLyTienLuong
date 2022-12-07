@@ -24,9 +24,32 @@ class AdminController {
     }
 
     async showLapBangLuong(req, res) {
-        res.render('pages/admin/lap-bangluong', { 
-            style: '/pages/admin/lap-bangluong.css',
-        });
+        try {
+            res.render('pages/admin/lap-bangluong', { 
+                style: '/pages/admin/lap-bangluong.css',
+            });
+        } catch (error) {
+            return console.log(error.message);
+        } 
+    }
+
+    async TaoBangLuong(req, res) {
+        try {
+            const procTinhLuongCongTy = query.procTinhLuongCaCongTy();
+        
+            const bangLuong = await sequelize.query(procTinhLuongCongTy, {
+                type: QueryTypes.SELECT,
+            });
+            
+            console.log(bangLuong);
+    
+            res.render('pages/admin/lap-bangluong', { 
+                style: '/pages/admin/lap-bangluong.css',
+                bangLuong: bangLuong
+            });
+        } catch (error) {
+            return console.log(error.message);
+        } 
     }
 
     async showUngLuong(req, res) {

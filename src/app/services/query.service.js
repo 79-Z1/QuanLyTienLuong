@@ -6,6 +6,19 @@ const procTinhLuongTheoNV = (manv) => {
 	return `EXEC pr_TinhLuongTheoNhanVien 12, 2022, '${manv}'`;
 };
 
+const procLuongTheoThanng = (manv) => {
+	return `declare @HSL float 
+        declare @THUE decimal
+        declare @TU decimal
+        declare @BH decimal
+        declare @SONC int
+        declare @LTL decimal
+        declare @TTC decimal
+        exec pr_LuongTheoThang 12,2022,'${manv}',@HSL output, @SONC output, @TU output, @TTC output,@BH output, @THUE output,@LTL output
+        
+        select @HSL as 'HeSoLuong',@SONC as 'SoNgayCong',@TU as 'TamUng',@TTC as 'TienTangCa',@BH as 'BaoHiem',@THUE as 'Thue',@LTL as 'TienThucLinh'`
+}
+
 const procTinhLuongTheoPhong = (maphong) => {
 	return `EXEC pr_TinhLuongTheoPhong 12, 2022, '${maphong}'`;
 };
@@ -52,4 +65,4 @@ const selectAllNhanVien = async () => {
 	return nhanviens;
 }
 
-module.exports = { procTinhLuongTheoNV, procTinhLuongTheoPhong,procTinhLuongCaCongTy,selectAllNhanVien,insertNhanVien };
+module.exports = { procTinhLuongTheoNV, procTinhLuongTheoPhong,procTinhLuongCaCongTy,selectAllNhanVien,insertNhanVien,procLuongTheoThanng };
