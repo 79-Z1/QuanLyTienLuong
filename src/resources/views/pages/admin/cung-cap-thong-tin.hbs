@@ -1,0 +1,116 @@
+<!-- Card stats -->
+<div class="g-6 mb-6 w-100 search-container mt-5">
+	<div class="col-xl-12 col-sm-12 col-12">
+			<div class="card shadow border-0 mb-7">
+				<div class="card-header">
+					<h5 class="mb-0">CUNG CẤP THÔNG TIN NHÂN VIÊN</h5>
+				</div>
+				<div class="table-responsive">
+					<table class="table table-hover table-nowrap ">
+						<tr>
+							<th scope="col" class="col2"><span stype="front-size:30px">HỌ LÓT</span> <th> <input name="holot" type="text"> </th></th>
+							<th scope="col" class="col2"><span stype="front-size:30px">ĐỊA CHỈ</span><th> <input name="diachi" type="text"> </th></th>
+						</tr>
+						<tr>
+							<th scope="col" class="col2"><span stype="front-size:30px">TÊN</span> <th> <input name="ten" type="text"> </th></th>
+							<th scope="col" class="col2"><span stype="front-size:30px">NGÀY SINH</span><th> <input name="ngaysinh" type="text"> </th></th>
+						</tr>
+						<tr>
+							<th scope="col" class="col2"><span stype="front-size:30px">MÃ PHÒNG</span><th> <input name="maphong" type="text"> </th></th>
+							<th scope="col" class="col2"> <span stype="front-size:30px; " > CCCD</span><th> <input name="cccd" type="text"> </th></th>
+						</tr>
+						<tr>
+							<th scope="col" class="col2"> <span stype="front-size:30px; " > SDT</span><th> <input name="sdt" type="text"> </th></th>				
+							<th scope="col" class="col2"><span stype="front-size:30px">STK</span><th> <input name="stk" type="text"> </th></th>
+						</tr>	
+						<tr>	
+							
+							<th scope="col" class="col2" > <span stype="front-size:30px;" > GIỚI TÍNH</span>
+								<th style=" display: flex;line-height: 30px;">
+									<input style="width: 50px; margin-right: 4px;margin-left: 4px; " type="radio" name="gioitinh" value="1"> Nam
+									<input style="width: 50px; margin-right: 4px;margin-left: 4px;" type="radio" name="gioitinh" value="0"> Nữ
+								</th>
+							</th>
+							<th scope="col" class="col2"> <span stype="front-size:30px; " > MÃ CHỨC VỤ</span><th> <input name="machucvu" type="text"> </th></th>
+						</tr>																	
+					</table>
+					<button style="margin-left: 40%;margin-top: 10px" class="btn btn-outline-purple themnhanvien-btn mb-5 w-25" type="submit">Thêm</button>
+				</div>
+			</div>
+	</div>
+</div>
+
+<div class="card shadow border-0 mb-7">
+	<div class="card-header">
+		<h5 class="mb-0">THÔNG TIN NHÂN VIÊN</h5>
+	</div>
+	<div class="table-responsive">
+		<table class="table table-hover table-nowrap">
+			<thead class="thead-light">
+				<tr>
+					<th scope="col">mã nhân viên</th>
+					<th scope="col">họ tên</th>
+					<th scope="col">chức vụ</th>
+					<th scope="col">phòng</th>
+					<th scope="col">giới tính</th>
+					<th scope="col">số điện thoại</th>
+					<th scope="col">Ngày sinh</th>
+					<th scope="col">Địa chỉ</th>
+					<th scope="col">CCCD</th>
+					<th scope="col">STK</th>					
+				</tr>
+			</thead>
+			<tbody>
+				{{#each nhanviens }}
+				<tr>
+					<td>{{this.MaNV}}</td>
+					<td>{{this.HoTen}}</td>
+					<td>{{this.TenChucVu}}</td>
+					<td>{{this.TenPhong}}</td>
+					<td>{{this.GioiTinh}}</td>
+					<td>{{this.SDT}}</td>
+					<td>{{this.NgaySinh}}</td>
+					<td>{{this.DiaChi}}</td>
+					<td>{{this.CMND}}</td>
+					<td>{{this.STK}}</td>
+					{{!-- <td class="text-end">
+						<a href="#" class="btn btn-sm btn-neutral">View</a>
+						<button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
+							<i class="bi bi-trash"></i>
+						</button>
+					</td> --}}
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+</div>
+<script>
+	$('input[type=search]').on('search', function () {
+    	window.location.replace("/admin/ketoan");
+	});
+
+{{!--@ THÊM NHÂN VIÊN STARR --}}
+	$('.themnhanvien-btn').on('click',async function() {
+		await ThemNhanVien();
+		window.location.reload();
+	});
+
+	async function ThemNhanVien() {
+		const payload = {
+			sdt: $('input[name=sdt]').val(),
+			diachi: $('input[name=diachi]').val(),
+			holot: $('input[name=holot]').val(),
+			ngaysinh: $('input[name=ngaysinh]').val(),
+			ten: $('input[name=ten]').val(),
+			cmnd: $('input[name=cccd]').val(),
+			gioitinh: $('input[name=gioitinh]:checked').val(),
+			stk: $('input[name=stk]').val(),
+			maphong: $('input[name=maphong]').val(),
+			machucvu: $('input[name=machucvu]').val(),
+		}
+
+		return (await instance.post('/admin/them-nhan-vien', payload)).data
+	}
+{{!--@ THÊM NHÂN VIÊN END --}}
+</script>

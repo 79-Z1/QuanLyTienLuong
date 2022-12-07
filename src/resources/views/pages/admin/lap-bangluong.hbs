@@ -1,264 +1,2099 @@
 <div class="option-buttons d-flex flex-row-reverse ">
-						<button type="button" class="btnn "data-bs-toggle="modal" data-bs-target="#staticBackdrop">Xóa bảng lương</button>
-						<button type="button" class="btnn "data-bs-toggle="modal" data-bs-target="#staticBackdrop1">Sửa bảng lương</button>
-						<button type="button" class="btnn ">Lập bảng lương</button>
-                        {{!--Start Modal Xóa bảng lương --}}
-                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title" id="staticBackdropLabel">Xóa bảng lương</h5>
-								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-							</div>
-							<div class="modal-body">
-								<h1>Bạn có chắc muốn xóa bảng lương này?</h1>
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btnn " data-bs-dismiss="modal">No</button>
-								<button type="button" class="btnn " data-bs-dismiss="modal">Yes</button>
-							</div>
-							</div>
-						</div>
-						</div>
-                        {{!--End Modal Xóa bảng lương --}}
-                        {{!--Start Modal Sửa bảng lương  --}}
-                        <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
-						<div class="modal-dialog test-modal">
-							<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title" id="staticBackdropLabel1">Sửa bảng lương</h5>
-								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-							</div>
-							<div class="modal-body">
-                                    <div class="card shadow border-0 mb-7 mt-5  ">
-                                        <div class="card-header ">
-                                            <h5 class="mb-0">BẢNG LƯƠNG THÁNG 1</h5>
-                                        </div>
-                                        <div class="table-responsive">
-                                            <table class="table table-hover table-nowrap ">
-                                                <thead >
-                                                    <tr>
-                                                        <th scope="col">mã nhân viên</th>
-                                                        <th scope="col">họ tên</th>
-                                                        <th scope="col">chức vụ</th>
-                                                        <th scope="col">phòng</th>
-                                                        <th scope="col">lương</th>
-                                                        <th></th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody >
-                                                    <tr>
-                                                        <td>NV003</td>
-                                                        <td>Nguyễn Thị Diễm Kiều</td>
-                                                        <td>quản lý</td>
-                                                        <td>Quản lý</td>
-                                                        <td>10.000.000đ</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>NV003</td>
-                                                        <td>Nguyễn Thị Diễm Kiều</td>
-                                                        <td>quản lý</td>
-                                                        <td>Quản lý</td>
-                                                        <td>10.000.000đ</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>NV003</td>
-                                                        <td>Nguyễn Thị Diễm Kiều</td>
-                                                        <td>quản lý</td>
-                                                        <td>Quản lý</td>
-                                                        <td>10.000.000đ</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>NV003</td>
-                                                        <td>Nguyễn Thị Diễm Kiều</td>
-                                                        <td>quản lý</td>
-                                                        <td>Quản lý</td>
-                                                        <td>10.000.000đ</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>NV003</td>
-                                                        <td>Nguyễn Thị Diễm Kiều</td>
-                                                        <td>quản lý</td>
-                                                        <td>Quản lý</td>
-                                                        <td>10.000.000đ</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>NV003</td>
-                                                        <td>Nguyễn Thị Diễm Kiều</td>
-                                                        <td>quản lý</td>
-                                                        <td>Quản lý</td>
-                                                        <td>10.000.000đ</td>
-                                                    </tr>
-
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btnn " data-bs-dismiss="modal">Hủy sửa đổi</button>
-								<button type="button" class="btnn " data-bs-dismiss="modal">Xác nhận sửa đổi</button>
-							</div>
-							</div>
-						</div>
-						</div>
-                        {{!--End Modal Sửa bảng lương --}}
+    <button type="button" class="btn btn-outline-success color-btn p-2" data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop" id="button-delete">Xóa bảng lương</button>
+    <button type="button" class="btn btn-outline-success color-btn p-2" data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop1" id="button-modify">Sửa bảng lương</button>
+    <button type="button" class="btn btn-outline-success color-btn p-2" data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop2" id="button-insert">Thêm bảng lương</button>
+    {{!--Start Modal Xóa bảng lương --}}
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Xóa bảng lương</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h1 >Bạn có chắc muốn xóa bảng lương này?</h1>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-success color-btn p-2 " data-bs-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-outline-success color-btn p-2 " data-bs-dismiss="modal">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{!--End Modal Xóa bảng lương --}}
+    {{!--Start Modal Thêm bảng lương --}}
+    <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel2" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel2">Thêm bảng lương</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h1>Thêm bảng lương tháng 12</h1>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-success color-btn p-2 " data-bs-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-outline-success color-btn p-2 " data-bs-dismiss="modal">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{!--End Modal Thêm bảng lương --}}
+    {{!--Start Modal Sửa bảng lương --}}
+    <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" 
+        data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+        <div class="modal-dialog test-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="staticBackdropLabel1">Sửa bảng lương</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                        <div class="card-header ">
+                            <h5 class="mb-0">BẢNG LƯƠNG THÁNG 11</h5>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-hover table-nowrap ">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">mã nhân viên</th>
+					                    <th scope="col">họ tên</th>
+					                    <th scope="col">chức vụ</th>
+					                    <th scope="col">phòng</th>
+					                    <th scope="col">hệ số lương</th>
+					                    <th scope="col">ngày công</th>
+					                    <th scope="col">tăng ca</th>
+					                    <th scope="col">tiền tạm ứng</th>
+					                    <th scope="col">bảo hiểm</th>
+					                    <th scope="col">thuế</th>
+					                    <th scope="col">thực lĩnh</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><p class="change">NV003</p></td>
+                                        <td><p class="change">Nguyễn Thị Diễm Kiều</p></td>
+                                        <td><p class="change">Quản lí </p></td>
+                                        <td><p class="change">Phòng hành chính-nhân sự</p></td>
+                                        <td><p class="change">8.03</p></td>
+                                        <td><p class="change">30</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">402.014 VND</p></td>
+                                        <td><p class="change">49.235 VND</p></td>
+                                        <td><p class="change">11.520.451 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV004</p></td>
+                                        <td><p class="change">Trương Khánh Hòa</p></td>
+                                        <td><p class="change">kế toán chính</p></td>
+                                        <td><p class="change">Phòng tài chính-kế toán</p></td>
+                                        <td><p class="change">6.38</p></td>
+                                        <td><p class="change">31</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">319.408 VND</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">10.299.506 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV005</p></td>
+                                        <td><p class="change">Nguyễn Duy Thiên</p></td>
+                                        <td><p class="change">Kế toán viên</p></td>
+                                        <td><p class="change">Phòng tài chính-kế</p></td>
+                                        <td><p class="change">4.98</p></td>
+                                        <td><p class="change">30</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">249.319 VND</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">7.570.881 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV006</p></td>
+                                        <td><p class="change">Nguyễn Thành Đạt</p></td>
+                                        <td><p class="change">Bác sĩ cao cấp</p></td>
+                                        <td><p class="change">Răng-Hàm-Mặt</p></td>
+                                        <td><p class="change">8</p></td>
+                                        <td><p class="change">31</p></td>
+                                        <td><p class="change">1.050.000 VND</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">400.512 VND</p></td>
+                                        <td><p class="change">46.000 VND</p></td>
+                                        <td><p class="change">12.870.821 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV007</p></td>
+                                        <td><p class="change">Lê Hoàng Thiện</p></td>
+                                        <td><p class="change">KTV X.Quang</p></td>
+                                        <td><p class="change">Khoa X-Quang kĩ thuật số</p></td>
+                                        <td><p class="change">4.98</p></td>
+                                        <td><p class="change">29</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">250.813 VND</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">7.798.417 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV008</p></td>
+                                        <td><p class="change">Phùng Thị Phượng</p></td>
+                                        <td><p class="change">Điều dưỡng</p></td>
+                                        <td><p class="change">Phòng điều dưỡng</p></td>
+                                        <td><p class="change">6.78</p></td>
+                                        <td><p class="change">31</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">340.434 VND</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">10.500.506 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV009</p></td>
+                                        <td><p class="change">Phạm Ngọc Tuyển</p></td>
+                                        <td><p class="change">Bác sĩ chính</p></td>
+                                        <td><p class="change">Điện não, điện cơ, thính lực, nhĩ lưỡng</p></td>
+                                        <td><p class="change">6.78</p></td>
+                                        <td><p class="change">30</td>
+                                        <td><p class="change">1.750.000 VND</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">350.434 VND</p></td>
+                                        <td><p class="change">0</td>
+                                        <td><p class="change">10.426.026 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV010</p></td>
+                                        <td><p class="change">Võ Thị Thu Hằng</p></td>
+                                        <td><p class="change">Điều dưỡng</p></td>
+                                        <td><p class="change">Phòng điều dưỡng</p></td>
+                                        <td><p class="change">6.78</p></td>
+                                        <td><p class="change">9</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">340.434 VND</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">2.691.226 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV011</p></td>
+                                        <td><p class="change">Nguyễn Thị Hàn Ny</p></td>
+                                        <td><p class="change">Điều dưỡng</p></td>
+                                        <td><p class="change">Phòng điều dưỡng</p></td>
+                                        <td><p class="change">6.78</p></td>
+                                        <td><p class="change">30</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">300.000 VND</p></td>
+                                        <td><p class="change">340.434 VND</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">9.762.766 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV012</p></td>
+                                        <td><p class="change">Lê Văn Quàng</p></td>
+                                        <td><p class="change">KTV Xét nghiệm</p></td>
+                                        <td><p class="change">Khoa xét nghiệm</p></td>
+                                        <td><p class="change">4.89</p></td>
+                                        <td><p class="change">31</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">500.000</p></td>
+                                        <td><p class="change">244.813 VND</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">7.284.157 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV013</p></td>
+                                        <td><p class="change">Nguyễn văn THuận</p></td>
+                                        <td><p class="change">KTV X.Quang</p></td>
+                                        <td><p class="change">Khoa X-Quang kĩ thuật số</p></td>
+                                        <td><p class="change">4.89</p></td>
+                                        <td><p class="change">30</p></td>
+                                        <td><p class="change">700.000 VND</p></td>
+                                        <td><p class="change">400.000 VND</p></td>
+                                        <td><p class="change">244.813 VND</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">7.084.157 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV014</p></td>
+                                        <td><p class="change">Ngô Thanh Tú</p></td>
+                                        <td><p class="change">Bác sĩ cao cấp</p></td>
+                                        <td><p class="change">Khoa nhi</p></td>
+                                        <td><p class="change">8</p></td>
+                                        <td><p class="change">30</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">400.512 VND</p></td>
+                                        <td><p class="change">48.000 VND</p></td>
+                                        <td><p class="change">11.076.155 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV015</p></td>
+                                        <td><p class="change">Trần Thị Tuyết Nhung</p></td>
+                                        <td><p class="change">Bác sĩ cao cấp</p></td>
+                                        <td><p class="change">Khoa tai-mũi-họng</p></td>
+                                        <td><p class="change">8</p></td>
+                                        <td><p class="change">30</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">400.512 VND</p></td>
+                                        <td><p class="change">48.000 VND</p></td>
+                                        <td><p class="change">11.473.488 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV016</p></td>
+                                        <td><p class="change">Đặng Thị Bích Hà</p></td>
+                                        <td><p class="change">Y tá chính</p></td>
+                                        <td><p class="change">Khoa nhi</p></td>
+                                        <td><p class="change">4.69</p></td>
+                                        <td><p class="change">30</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">234.800 VND</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">7.884.157 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV017</p></td>
+                                        <td><p class="change">Lê Thị Mỹ Hạnh</p></td>
+                                        <td><p class="change">Bác sĩ chính</p></td>
+                                        <td><p class="change">Sản phụ khoa</p></td>
+                                        <td><p class="change">6.78</p></td>
+                                        <td><p class="change">30</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">339.434 VND</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">9.762.766 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV018</p></td>
+                                        <td><p class="change">Nguyễn Văn Nhứt</p></td>
+                                        <td><p class="change">Bác sĩ cao cấp</p></td>
+                                        <td><p class="change">Khoa ngoại tổng quát</p></td>
+                                        <td><p class="change">8</p></td>
+                                        <td><p class="change">29</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">400.512 VND</p></td>
+                                        <td><p class="change">46.000 VND</p></td>
+                                        <td><p class="change">11.076.155 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV019</p></td>
+                                        <td><p class="change">Lương Thị Kim Trang</p></td>
+                                        <td><p class="change">Y tá chính</p></td>
+                                        <td><p class="change">Phòng lưu bệnh</p></td>
+                                        <td><p class="change">4.69</p></td>
+                                        <td><p class="change">30</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">234.800 VND</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">7.300.157 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV020</p></td>
+                                        <td><p class="change">Phạm Kim Hồng Thảo</p></td>
+                                        <td><p class="change">Bác sĩ cao cấp</p></td>
+                                        <td><p class="change">Nội tổng quát và tim mạch</p></td>
+                                        <td><p class="change">8</p></td>
+                                        <td><p class="change">31</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">400.512 VND</p></td>
+                                        <td><p class="change">48.000 VND</p></td>
+                                        <td><p class="change">11.576.155 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV021</p></td>
+                                        <td><p class="change">Lê Thị Mai Quỳnh</p></td>
+                                        <td><p class="change">Y tá chính</p></td>
+                                        <td><p class="change">Nội soi tiêu hóa</p></td>
+                                        <td><p class="change">4.69</p></td>
+                                        <td><p class="change">31</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">234.800 VND</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">7.300.157 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV022</p></td>
+                                        <td><p class="change">Nguyễn Thị Đàm</p></td>
+                                        <td><p class="change">Điều dưỡng</p></td>
+                                        <td><p class="change">Phòng điều dưỡng</p></td>
+                                        <td><p class="change">6.78</p></td>
+                                        <td><p class="change">31</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">500.000 VND</p></td>
+                                        <td><p class="change">340.434 VND</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">9.262.766 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV023</p></td>
+                                        <td><p class="change">Trần Thị Hương Thủy</p></td>
+                                        <td><p class="change">Điều dưỡng</p></td>
+                                        <td><p class="change">Phòng điều dưỡng</p></td>
+                                        <td><p class="change">6.78</p></td>
+                                        <td><p class="change">30</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">340.434 VND</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">9.762.766 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV024</p></td>
+                                        <td><p class="change">Phùng Thị Bảo Ngân</p></td>
+                                        <td><p class="change">Y tá chính</p></td>
+                                        <td><p class="change">Khoa tai-mũi-họng</p></td>
+                                        <td><p class="change">4.69</p></td>
+                                        <td><p class="change">30</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">234.800 VND</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">7.400.157 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV025</p></td>
+                                        <td><p class="change">Lê Minh Vũ</p></td>
+                                        <td><p class="change">Y tá</p></td>
+                                        <td><p class="change">Khoa nhi</p></td>
+                                        <td><p class="change">4.02</p></td>
+                                        <td><p class="change">30</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">201.257 VND</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">5.400.157 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV026</p></td>
+                                        <td><p class="change">Nguyễn Thị Mỹ Hiệp</p></td>
+                                        <td><p class="change">Y tá</p></td>
+                                        <td><p class="change">Sản phụ khoa</p></td>
+                                        <td><p class="change">4.02</p></td>
+                                        <td><p class="change">31</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">201.257 VND</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">5.500.157 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV027</p></td>
+                                        <td><p class="change">Nguyễn Thị Mộng Hà</p></td>
+                                        <td><p class="change">Bác sĩ</p></td>
+                                        <td><p class="change">Khoa ngoại tổng quát</p></td>
+                                        <td><p class="change">4.98</p></td>
+                                        <td><p class="change">31</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">249.319 VND</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">7.500.157 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV028</p></td>
+                                        <td><p class="change">Ngụy Mai Phương</p></td>
+                                        <td><p class="change">Y tá</p></td>
+                                        <td><p class="change">Phòng lưu bệnh</p></td>
+                                        <td><p class="change">4.02</p></td>
+                                        <td><p class="change">31</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">201.257 VND</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">5.500.157 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV029</p></td>
+                                        <td><p class="change">Nguyễn Thị Hoa Lư</p></td>
+                                        <td><p class="change">Bác sĩ chính</p></td>
+                                        <td><p class="change">Nội soi tiêu hóa</p></td>
+                                        <td><p class="change">6.78</p></td>
+                                        <td><p class="change">31</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">300.000</p></td>
+                                        <td><p class="change">340.434 VND</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">9.762.766 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV030</p></td>
+                                        <td><p class="change">Lê Nguyễn Thảo Sương</p></td>
+                                        <td><p class="change">Y tá chính</p></td>
+                                        <td><p class="change">Răng-Hàm-Mặt</p></td>
+                                        <td><p class="change">4.69</p></td>
+                                        <td><p class="change">29</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">234.800 VND</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">5.500.157 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV031</p></td>
+                                        <td><p class="change">Võ Thị Lan Anh</p></td>
+                                        <td><p class="change">Y tá</p></td>
+                                        <td><p class="change">Răng-Hàm-Mặt</p></td>
+                                        <td><p class="change">4.02</p></td>
+                                        <td><p class="change">31</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">201.257 VND</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">5.300.157 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV032</p></td>
+                                        <td><p class="change">Trần Minh Tân</p></td>
+                                        <td><p class="change">Bảo vệ</p></td>
+                                        <td><p class="change">Hậu cần</p></td>
+                                        <td><p class="change">3.35</p></td>
+                                        <td><p class="change">31</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">167.714 VND</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">5.000.157 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV033</p></td>
+                                        <td><p class="change">Lê Thị Thu Thủy</p></td>
+                                        <td><p class="change">Lễ tân</p></td>
+                                        <td><p class="change">Chăm sóc khách hàng</p></td>
+                                        <td><p class="change">3.63</p></td>
+                                        <td><p class="change">31</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">181.732 VND</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">5.300.157 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV034</p></td>
+                                        <td><p class="change">Lê Thị Thanh Thủy</p></td>
+                                        <td><p class="change">Điều dưỡng</p></td>
+                                        <td><p class="change">Phòng lưu bệnh</p></td>
+                                        <td><p class="change">6.78</p></td>
+                                        <td><p class="change">30</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">340.434 VND</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">9.662.766 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><p class="change">NV035</p></td>
+                                        <td><p class="change">Đỗ Thành Long</p></td>
+                                        <td><p class="change">Lái xe</p></td>
+                                        <td><p class="change">Hậu cần</p></td>
+                                        <td><p class="change">4.69</p></td>
+                                        <td><p class="change">30</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">234.800 VND</p>	</td>
+                                        <td><p class="change">0</p></td>
+                                        <td><p class="change">5.900.157 VND</p></td>
+                                        <td class="text-end">
+                                            <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral text-danger-hover" id="modify">
+                                                <i class="bi bi-pen"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-success color-btn p-2" data-bs-dismiss="modal">Hủy sửa
+                        đổi</button>
+                    <button type="button" class="btn btn-outline-success color-btn p-2" data-bs-dismiss="modal">Xác nhận sửa
+                        đổi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{!--End Modal Sửa bảng lương --}}
 </div>
-<div class="single-item ">
-    {{!-- Tháng 1 --}}
-    <div class="card shadow border-0 mb-7 mt-5  ">
-        <div class="card-header ">
-            <h5 class="mb-0">BẢNG LƯƠNG THÁNG 1</h5>
-        </div>
-        <div class="table-responsive">
-            <table class="table table-hover table-nowrap ">
-                <thead >
-                    <tr>
-                        <th scope="col">mã nhân viên</th>
-                        <th scope="col">họ tên</th>
-                        <th scope="col">chức vụ</th>
-                        <th scope="col">phòng</th>
-                        <th scope="col">lương</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody >
-                    <tr>
-                        <td>NV003</td>
-                        <td>Nguyễn Thị Diễm Kiều</td>
-                        <td>quản lý</td>
-                        <td>Quản lý</td>
-                        <td>10.000.000đ</td>
-                    </tr>
-                    <tr>
-                        <td>NV003</td>
-                        <td>Nguyễn Thị Diễm Kiều</td>
-                        <td>quản lý</td>
-                        <td>Quản lý</td>
-                        <td>10.000.000đ</td>
-                    </tr>
-                    <tr>
-                        <td>NV003</td>
-                        <td>Nguyễn Thị Diễm Kiều</td>
-                        <td>quản lý</td>
-                        <td>Quản lý</td>
-                        <td>10.000.000đ</td>
-                    </tr>
-                    <tr>
-                        <td>NV003</td>
-                        <td>Nguyễn Thị Diễm Kiều</td>
-                        <td>quản lý</td>
-                        <td>Quản lý</td>
-                        <td>10.000.000đ</td>
-                    </tr>
-                    <tr>
-                        <td>NV003</td>
-                        <td>Nguyễn Thị Diễm Kiều</td>
-                        <td>quản lý</td>
-                        <td>Quản lý</td>
-                        <td>10.000.000đ</td>
-                    </tr>
-                    <tr>
-                        <td>NV003</td>
-                        <td>Nguyễn Thị Diễm Kiều</td>
-                        <td>quản lý</td>
-                        <td>Quản lý</td>
-                        <td>10.000.000đ</td>
-                    </tr>
+<!-- Carousel 1 -->
+<div id="carouselExampleControls" class="carousel slide"   data-bs-ride="carousel" data-interval="false">
+  <div class="carousel-inner">
+    <div class="carousel-item active" >
+      
+      {{!-- Tháng 9 --}}
+        <div class="card shadow border-0 mb-7 mt-5  d-block"style="width:100%">
+            <div class="card-header ">
+                <h5 class="mb-0" id="t-09">BẢNG LƯƠNG THÁNG 9</h5>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover table-nowrap ">
+                    <thead>
+                        <tr>
+                            <th scope="col">mã nhân viên</th>
+					        <th scope="col">họ tên</th>
+					        <th scope="col">chức vụ</th>
+					        <th scope="col">phòng</th>
+					        <th scope="col">hệ số lương</th>
+					        <th scope="col">ngày công</th>
+					        <th scope="col">tăng ca</th>
+					        <th scope="col">tiền tạm ứng</th>
+					        <th scope="col">bảo hiểm</th>
+					        <th scope="col">thuế</th>
+					        <th scope="col">thực lĩnh</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>NV003</td>
+                            <td>Nguyễn Thị Diễm Kiều</td>
+                            <td>Quản lí </td>
+                            <td>Phòng hành chính-nhân sự</td>
+                            <td>8.03</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>402.014 VND</td>
+                            <td>49.235 VND</td>
+                            <td>11.520.451 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV004</td>
+                            <td>Trương Khánh Hòa</td>
+                            <td>kế toán chính</td>
+                            <td>Phòng tài chính-kế toán</td>
+                            <td>6.38</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>319.408 VND</td>
+                            <td>0</td>
+                            <td>10.299.506 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV005</td>
+                            <td>Nguyễn Duy Thiên</td>
+                            <td>Kế toán viên</td>
+                            <td>Phòng tài chính-kế</td>
+                            <td>4.98</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>249.319 VND</td>
+                            <td>0</td>
+                            <td>7.570.881 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV006</td>
+                            <td>Nguyễn Thành Đạt</td>
+                            <td>Bác sĩ cao cấp</td>
+                            <td>Răng-Hàm-Mặt</td>
+                            <td>8</td>
+                            <td>31</td>
+                            <td>1.050.000 VND</td>
+                            <td>0</td>
+                            <td>400.512 VND</td>
+                            <td>46.000 VND</td>
+                            <td>12.870.821 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV007</td>
+                            <td>Lê Hoàng Thiện</td>
+                            <td>KTV X.Quang</td>
+                            <td>Khoa X-Quang kĩ thuật số</td>
+                            <td>4.98</td>
+                            <td>29</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>250.813 VND</td>
+                            <td>0</td>
+                            <td>7.798.417 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV008</td>
+                            <td>Phùng Thị Phượng</td>
+                            <td>Điều dưỡng</td>
+                            <td>Phòng điều dưỡng</td>
+                            <td>6.78</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>340.434 VND</td>
+                            <td>0</td>
+                            <td>10.500.506 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV009</td>
+                            <td>Phạm Ngọc Tuyển</td>
+                            <td>Bác sĩ chính</td>
+                            <td>Điện não, điện cơ, thính lực, nhĩ lưỡng</td>
+                            <td>6.78</td>
+                            <td>30</td>
+                            <td>1.750.000 VND</td>
+                            <td>0</td>
+                            <td>350.434 VND</td>
+                            <td>0</td>
+                            <td>10.426.026 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV010</td>
+                            <td>Võ Thị Thu Hằng</td>
+                            <td>Điều dưỡng</td>
+                            <td>Phòng điều dưỡng</td>
+                            <td>6.78</td>
+                            <td>9</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>340.434 VND</td>
+                            <td>0</td>
+                            <td>2.691.226 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV011</td>
+                            <td>Nguyễn Thị Hàn Ny</td>
+                            <td>Điều dưỡng</td>
+                            <td>Phòng điều dưỡng</td>
+                            <td>6.78</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>300.000 VND</td>
+                            <td>340.434 VND</td>
+                            <td>0</td>
+                            <td>9.762.766 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV012</td>
+                            <td>Lê Văn Quàng</td>
+                            <td>KTV Xét nghiệm</td>
+                            <td>Khoa xét nghiệm</td>
+                            <td>4.89</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>500.000</td>
+                            <td>244.813 VND</td>
+                            <td>0</td>
+                            <td>7.284.157 VND</td>
+                        </tr>
+                         <tr>
+                            <td>NV013</td>
+                            <td>Nguyễn văn THuận</td>
+                            <td>KTV X.Quang</td>
+                            <td>Khoa X-Quang kĩ thuật số</td>
+                            <td>4.89</td>
+                            <td>30</td>
+                            <td>700.000 VND</td>
+                            <td>400.000 VND</td>
+                            <td>244.813 VND</td>
+                            <td>0</td>
+                            <td>7.084.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV014</td>
+                            <td>Ngô Thanh Tú</td>
+                            <td>Bác sĩ cao cấp</td>
+                            <td>Khoa nhi</td>
+                            <td>8</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>400.512 VND</td>
+                            <td>48.000 VND</td>
+                            <td>11.076.155 VND</td>
+                        </tr>
+                         <tr>
+                            <td>NV015</td>
+                            <td>Trần Thị Tuyết Nhung</td>
+                            <td>Bác sĩ cao cấp</td>
+                            <td>Khoa tai-mũi-họng</td>
+                            <td>8</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>400.512 VND</td>
+                            <td>48.000 VND</td>
+                            <td>11.473.488 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV016</td>
+                            <td>Đặng Thị Bích Hà</td>
+                            <td>Y tá chính</td>
+                            <td>Khoa nhi</td>
+                            <td>4.69</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>234.800 VND</td>
+                            <td>0</td>
+                            <td>7.884.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV017</td>
+                            <td>Lê Thị Mỹ Hạnh</td>
+                            <td>Bác sĩ chính</td>
+                            <td>Sản phụ khoa</td>
+                            <td>6.78</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>339.434 VND</td>
+                            <td>0</td>
+                            <td>9.762.766 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV018</td>
+                            <td>Nguyễn Văn Nhứt</td>
+                            <td>Bác sĩ cao cấp</td>
+                            <td>Khoa ngoại tổng quát</td>
+                            <td>8</td>
+                            <td>29</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>400.512 VND</td>
+                            <td>46.000 VND</td>
+                            <td>11.076.155 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV019</td>
+                            <td>Lương Thị Kim Trang</td>
+                            <td>Y tá chính</td>
+                            <td>Phòng lưu bệnh</td>
+                            <td>4.69</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>234.800 VND</td>
+                            <td>0</td>
+                            <td>7.300.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV020</td>
+                            <td>Phạm Kim Hồng Thảo</td>
+                            <td>Bác sĩ cao cấp</td>
+                            <td>Nội tổng quát và tim mạch</td>
+                            <td>8</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>400.512 VND</td>
+                            <td>48.000 VND</td>
+                            <td>11.576.155 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV021</td>
+                            <td>Lê Thị Mai Quỳnh</td>
+                            <td>Y tá chính</td>
+                            <td>Nội soi tiêu hóa</td>
+                            <td>4.69</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>234.800 VND</td>
+                            <td>0</td>
+                            <td>7.300.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV022</td>
+                            <td>Nguyễn Thị Đàm</td>
+                            <td>Điều dưỡng</td>
+                            <td>Phòng điều dưỡng</td>
+                            <td>6.78</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>500.000 VND</td>
+                            <td>340.434 VND</td>
+                            <td>0</td>
+                            <td>9.262.766 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV023</td>
+                            <td>Trần Thị Hương Thủy</td>
+                            <td>Điều dưỡng</td>
+                            <td>Phòng điều dưỡng</td>
+                            <td>6.78</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>340.434 VND</td>
+                            <td>0</td>
+                            <td>9.762.766 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV024</td>
+                            <td>Phùng Thị Bảo Ngân</td>
+                            <td>Y tá chính</td>
+                            <td>Khoa tai-mũi-họng</td>
+                            <td>4.69</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>234.800 VND</td>
+                            <td>0</td>
+                            <td>7.400.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV025</td>
+                            <td>Lê Minh Vũ</td>
+                            <td>Y tá</td>
+                            <td>Khoa nhi</td>
+                            <td>4.02</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>201.257 VND	</td>
+                            <td>0</td>
+                            <td>5.400.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV026</td>
+                            <td>Nguyễn Thị Mỹ Hiệp</td>
+                            <td>Y tá</td>
+                            <td>Sản phụ khoa</td>
+                            <td>4.02</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>201.257 VND</td>
+                            <td>0</td>
+                            <td>5.500.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV027</td>
+                            <td>Nguyễn Thị Mộng Hà</td>
+                            <td>Bác sĩ</td>
+                            <td>Khoa ngoại tổng quát</td>
+                            <td>4.98</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>249.319 VND</td>
+                            <td>0</td>
+                            <td>7.500.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV028</td>
+                            <td>Ngụy Mai Phương</td>
+                            <td>Y tá</td>
+                            <td>Phòng lưu bệnh</td>
+                            <td>4.02</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>201.257 VND</td>
+                            <td>0</td>
+                            <td>5.500.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV029</td>
+                            <td>Nguyễn Thị Hoa Lư</td>
+                            <td>Bác sĩ chính</td>
+                            <td>Nội soi tiêu hóa</td>
+                            <td>6.78</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>300.000</td>
+                            <td>340.434 VND</td>
+                            <td>0</td>
+                            <td>9.762.766 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV030</td>
+                            <td>Lê Nguyễn Thảo Sương</td>
+                            <td>Y tá chính</td>
+                            <td>Răng-Hàm-Mặt</td>
+                            <td>4.69</td>
+                            <td>29</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>234.800 VND	</td>
+                            <td>0</td>
+                            <td>5.500.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV031</td>
+                            <td>Võ Thị Lan Anh</td>
+                            <td>Y tá</td>
+                            <td>Răng-Hàm-Mặt</td>
+                            <td>4.02</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>201.257 VND	</td>
+                            <td>0</td>
+                            <td>5.300.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV032</td>
+                            <td>Trần Minh Tân</td>
+                            <td>Bảo vệ</td>
+                            <td>Hậu cần</td>
+                            <td>3.35</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>167.714 VND	</td>
+                            <td>0</td>
+                            <td>5.000.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV033</td>
+                            <td>Lê Thị Thu Thủy</td>
+                            <td>Lễ tân</td>
+                            <td>Chăm sóc khách hàng</td>
+                            <td>3.63</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>181.732 VND</td>
+                            <td>0</td>
+                            <td>5.300.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV034</td>
+                            <td>Lê Thị Thanh Thủy</td>
+                            <td>Điều dưỡng</td>
+                            <td>Phòng lưu bệnh</td>
+                            <td>6.78</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>340.434 VND</td>
+                            <td>0</td>
+                            <td>9.662.766 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV035</td>
+                            <td>Đỗ Thành Long</td>
+                            <td>Lái xe</td>
+                            <td>Hậu cần</td>
+                            <td>4.69</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>234.800 VND	</td>
+                            <td>0</td>
+                            <td>5.900.157 VND</td>
+                        </tr>
 
-                </tbody>
-            </table>
-	    </div>
-    </div>
-    {{!-- Tháng 2 --}}
-    <div class="card shadow border-0 mb-7 mt-5 khongbietdatten">
-        <div class="card-header ">
-            <h5 class="mb-0">LẬP BẢNG LƯƠNG THÁNG 2</h5>
-        </div>
-        <div class="table-responsive">
-            <table class="table table-hover table-nowrap">
-                <thead >
-                    <tr>
-                        <th scope="col">mã nhân viên</th>
-                        <th scope="col">họ tên</th>
-                        <th scope="col">chức vụ</th>
-                        <th scope="col">phòng</th>
-                        <th scope="col">lương</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>NV003</td>
-                        <td>Nguyễn Thị Diễm Kiều</td>
-                        <td>quản lý</td>
-                        <td>Quản lý</td>
-                        <td>10.000.000đ</td>
-                    </tr>
-                    <tr>
-                        <td>NV004</td>
-                        <td>Tony Hòe</td>
-                        <td>Kế toán</td>
-                        <td>Kế toán</td>
-                        <td>12.000.000đ</td>
-                    </tr>
-                    <tr>
-                        <td>NV005</td>
-                        <td>Nguyễn Thị Diễm </td>
-                        <td>Lao công</td>
-                        <td>lao công</td>
-                        <td>5.000.000đ</td>
-                    </tr>
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-    {{!-- Tháng 3 --}}
-    <div class="card shadow border-0 mb-7 mt-5 khongbietdatten">
-        <div class="card-header ">
-            <h5 class="mb-0">LẬP BẢNG LƯƠNG THÁNG 3</h5>
-        </div>
-        <div class="table-responsive">
-            <table class="table table-hover table-nowrap">
-                <thead >
-                    <tr>
-                        <th scope="col">mã nhân viên</th>
-                        <th scope="col">họ tên</th>
-                        <th scope="col">chức vụ</th>
-                        <th scope="col">phòng</th>
-                        <th scope="col">lương</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>NV003</td>
-                        <td>Nguyễn Thị Diễm Kiều</td>
-                        <td>quản lý</td>
-                        <td>Quản lý</td>
-                        <td>10.000.000đ</td>
-                    </tr>
-                    <tr>
-                        <td>NV004</td>
-                        <td>Tony Hòe</td>
-                        <td>Kế toán</td>
-                        <td>Kế toán</td>
-                        <td>12.000.000đ</td>
-                    </tr>
-                    <tr>
-                        <td>NV005</td>
-                        <td>Nguyễn Thị Diễm </td>
-                        <td>Lao công</td>
-                        <td>lao công</td>
-                        <td>5.000.000đ</td>
-                    </tr>
-                </tbody>
-            </table>
+    <div class="carousel-item">
+      {{!-- Tháng 10 --}}
+        <div class="card shadow border-0 mb-7 mt-5  d-block"style="width:100%">
+            <div class="card-header ">
+                <h5 class="mb-0" id="t-10">BẢNG LƯƠNG THÁNG 10</h5>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover table-nowrap ">
+                    <thead>
+                        <tr>
+                            <th scope="col">mã nhân viên</th>
+					        <th scope="col">họ tên</th>
+					        <th scope="col">chức vụ</th>
+					        <th scope="col">phòng</th>
+					        <th scope="col">hệ số lương</th>
+					        <th scope="col">ngày công</th>
+					        <th scope="col">tăng ca</th>
+					        <th scope="col">tiền tạm ứng</th>
+					        <th scope="col">bảo hiểm</th>
+					        <th scope="col">thuế</th>
+					        <th scope="col">thực lĩnh</th>  
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>NV003</td>
+                            <td>Nguyễn Thị Diễm Kiều</td>
+                            <td>Quản lí </td>
+                            <td>Phòng hành chính-nhân sự</td>
+                            <td>8.03</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>402.014 VND</td>
+                            <td>49.235 VND</td>
+                            <td>11.520.451 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV004</td>
+                            <td>Trương Khánh Hòa</td>
+                            <td>kế toán chính</td>
+                            <td>Phòng tài chính-kế toán</td>
+                            <td>6.38</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>1.000.000 VND</td>
+                            <td>319.408 VND</td>
+                            <td>0</td>
+                            <td>10.099.506 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV005</td>
+                            <td>Nguyễn Duy Thiên</td>
+                            <td>Kế toán viên</td>
+                            <td>Phòng tài chính-kế</td>
+                            <td>4.98</td>
+                            <td>30</td>
+                            <td>700.000 VND</td>
+                            <td>500.000 VND</td>
+                            <td>249.319 VND</td>
+                            <td>0</td>
+                            <td>7.570.881 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV006</td>
+                            <td>Nguyễn Thành Đạt</td>
+                            <td>Bác sĩ cao cấp</td>
+                            <td>Răng-Hàm-Mặt</td>
+                            <td>8</td>
+                            <td>31</td>
+                            <td>1.050.000 VND</td>
+                            <td>0</td>
+                            <td>400.512 VND</td>
+                            <td>46.000 VND</td>
+                            <td>12.870.821 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV007</td>
+                            <td>Lê Hoàng Thiện</td>
+                            <td>KTV X.Quang</td>
+                            <td>Khoa X-Quang kĩ thuật số</td>
+                            <td>4.98</td>
+                            <td>29</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>250.813 VND</td>
+                            <td>0</td>
+                            <td>7.798.417 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV008</td>
+                            <td>Phùng Thị Phượng</td>
+                            <td>Điều dưỡng</td>
+                            <td>Phòng điều dưỡng</td>
+                            <td>6.78</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>340.434 VND</td>
+                            <td>0</td>
+                            <td>10.500.506 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV009</td>
+                            <td>Phạm Ngọc Tuyển</td>
+                            <td>Bác sĩ chính</td>
+                            <td>Điện não, điện cơ, thính lực, nhĩ lưỡng</td>
+                            <td>6.78</td>
+                            <td>30</td>
+                            <td>1.750.000 VND</td>
+                            <td>500.000 VND</td>
+                            <td>350.434 VND</td>
+                            <td>0</td>
+                            <td>10.426.026 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV010</td>
+                            <td>Võ Thị Thu Hằng</td>
+                            <td>Điều dưỡng</td>
+                            <td>Phòng điều dưỡng</td>
+                            <td>6.78</td>
+                            <td>9</td>
+                            <td>0</td>
+                            <td>400.000</td>
+                            <td>340.434 VND</td>
+                            <td>0</td>
+                            <td>2.691.226 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV011</td>
+                            <td>Nguyễn Thị Hàn Ny</td>
+                            <td>Điều dưỡng</td>
+                            <td>Phòng điều dưỡng</td>
+                            <td>6.78</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>300.000 VND</td>
+                            <td>340.434 VND</td>
+                            <td>0</td>
+                            <td>9.762.766 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV012</td>
+                            <td>Lê Văn Quàng</td>
+                            <td>KTV Xét nghiệm</td>
+                            <td>Khoa xét nghiệm</td>
+                            <td>4.89</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>500.000</td>
+                            <td>244.813 VND</td>
+                            <td>0</td>
+                            <td>7.284.157 VND</td>
+                        </tr>
+                         <tr>
+                            <td>NV013</td>
+                            <td>Nguyễn văn THuận</td>
+                            <td>KTV X.Quang</td>
+                            <td>Khoa X-Quang kĩ thuật số</td>
+                            <td>4.89</td>
+                            <td>30</td>
+                            <td>700.000 VND</td>
+                            <td>400.000 VND</td>
+                            <td>244.813 VND</td>
+                            <td>0</td>
+                            <td>7.084.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV014</td>
+                            <td>Ngô Thanh Tú</td>
+                            <td>Bác sĩ cao cấp</td>
+                            <td>Khoa nhi</td>
+                            <td>8</td>
+                            <td>30</td>
+                            <td>1.050.000 VND</td>
+                            <td>1.000.000 VND</td>
+                            <td>400.512 VND</td>
+                            <td>48.000 VND</td>
+                            <td>11.076.155 VND</td>
+                        </tr>
+                         <tr>
+                            <td>NV015</td>
+                            <td>Trần Thị Tuyết Nhung</td>
+                            <td>Bác sĩ cao cấp</td>
+                            <td>Khoa tai-mũi-họng</td>
+                            <td>8</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>500.000 VND</td>
+                            <td>400.512 VND</td>
+                            <td>48.000 VND</td>
+                            <td>11.473.488 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV016</td>
+                            <td>Đặng Thị Bích Hà</td>
+                            <td>Y tá chính</td>
+                            <td>Khoa nhi</td>
+                            <td>4.69</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>234.800 VND</td>
+                            <td>0</td>
+                            <td>7.884.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV017</td>
+                            <td>Lê Thị Mỹ Hạnh</td>
+                            <td>Bác sĩ chính</td>
+                            <td>Sản phụ khoa</td>
+                            <td>6.78</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>339.434 VND</td>
+                            <td>0</td>
+                            <td>9.762.766 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV018</td>
+                            <td>Nguyễn Văn Nhứt</td>
+                            <td>Bác sĩ cao cấp</td>
+                            <td>Khoa ngoại tổng quát</td>
+                            <td>8</td>
+                            <td>29</td>
+                            <td>0</td>
+                            <td>400.000 VND</td>
+                            <td>400.512 VND</td>
+                            <td>46.000 VND</td>
+                            <td>11.076.155 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV019</td>
+                            <td>Lương Thị Kim Trang</td>
+                            <td>Y tá chính</td>
+                            <td>Phòng lưu bệnh</td>
+                            <td>4.69</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>234.800 VND</td>
+                            <td>0</td>
+                            <td>7.300.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV020</td>
+                            <td>Phạm Kim Hồng Thảo</td>
+                            <td>Bác sĩ cao cấp</td>
+                            <td>Nội tổng quát và tim mạch</td>
+                            <td>8</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>400.512 VND</td>
+                            <td>48.000 VND</td>
+                            <td>11.576.155 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV021</td>
+                            <td>Lê Thị Mai Quỳnh</td>
+                            <td>Y tá chính</td>
+                            <td>Nội soi tiêu hóa</td>
+                            <td>4.69</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>234.800 VND</td>
+                            <td>0</td>
+                            <td>7.300.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV022</td>
+                            <td>Nguyễn Thị Đàm</td>
+                            <td>Điều dưỡng</td>
+                            <td>Phòng điều dưỡng</td>
+                            <td>6.78</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>500.000 VND</td>
+                            <td>340.434 VND</td>
+                            <td>0</td>
+                            <td>9.262.766 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV023</td>
+                            <td>Trần Thị Hương Thủy</td>
+                            <td>Điều dưỡng</td>
+                            <td>Phòng điều dưỡng</td>
+                            <td>6.78</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>340.434 VND</td>
+                            <td>0</td>
+                            <td>9.762.766 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV024</td>
+                            <td>Phùng Thị Bảo Ngân</td>
+                            <td>Y tá chính</td>
+                            <td>Khoa tai-mũi-họng</td>
+                            <td>4.69</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>234.800 VND</td>
+                            <td>0</td>
+                            <td>7.400.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV025</td>
+                            <td>Lê Minh Vũ</td>
+                            <td>Y tá</td>
+                            <td>Khoa nhi</td>
+                            <td>4.02</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>400.000</td>
+                            <td>201.257 VND	</td>
+                            <td>0</td>
+                            <td>5.400.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV026</td>
+                            <td>Nguyễn Thị Mỹ Hiệp</td>
+                            <td>Y tá</td>
+                            <td>Sản phụ khoa</td>
+                            <td>4.02</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>201.257 VND</td>
+                            <td>0</td>
+                            <td>5.500.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV027</td>
+                            <td>Nguyễn Thị Mộng Hà</td>
+                            <td>Bác sĩ</td>
+                            <td>Khoa ngoại tổng quát</td>
+                            <td>4.98</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>249.319 VND</td>
+                            <td>0</td>
+                            <td>7.500.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV028</td>
+                            <td>Ngụy Mai Phương</td>
+                            <td>Y tá</td>
+                            <td>Phòng lưu bệnh</td>
+                            <td>4.02</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>201.257 VND</td>
+                            <td>0</td>
+                            <td>5.500.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV029</td>
+                            <td>Nguyễn Thị Hoa Lư</td>
+                            <td>Bác sĩ chính</td>
+                            <td>Nội soi tiêu hóa</td>
+                            <td>6.78</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>300.000</td>
+                            <td>340.434 VND</td>
+                            <td>0</td>
+                            <td>9.762.766 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV030</td>
+                            <td>Lê Nguyễn Thảo Sương</td>
+                            <td>Y tá chính</td>
+                            <td>Răng-Hàm-Mặt</td>
+                            <td>4.69</td>
+                            <td>29</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>234.800 VND	</td>
+                            <td>0</td>
+                            <td>5.500.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV031</td>
+                            <td>Võ Thị Lan Anh</td>
+                            <td>Y tá</td>
+                            <td>Răng-Hàm-Mặt</td>
+                            <td>4.02</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>201.257 VND	</td>
+                            <td>0</td>
+                            <td>5.300.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV032</td>
+                            <td>Trần Minh Tân</td>
+                            <td>Bảo vệ</td>
+                            <td>Hậu cần</td>
+                            <td>3.35</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>167.714 VND	</td>
+                            <td>0</td>
+                            <td>5.000.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV033</td>
+                            <td>Lê Thị Thu Thủy</td>
+                            <td>Lễ tân</td>
+                            <td>Chăm sóc khách hàng</td>
+                            <td>3.63</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>181.732 VND</td>
+                            <td>0</td>
+                            <td>5.300.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV034</td>
+                            <td>Lê Thị Thanh Thủy</td>
+                            <td>Điều dưỡng</td>
+                            <td>Phòng lưu bệnh</td>
+                            <td>6.78</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>340.434 VND</td>
+                            <td>0</td>
+                            <td>9.662.766 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV035</td>
+                            <td>Đỗ Thành Long</td>
+                            <td>Lái xe</td>
+                            <td>Hậu cần</td>
+                            <td>4.69</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>234.800 VND	</td>
+                            <td>0</td>
+                            <td>5.900.157 VND</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
+    <div id="thang11" class="carousel-item">
+      {{!-- Tháng 11 --}}
+        <div class="card shadow border-0 mb-7 mt-5  d-block"style="width:100%">
+            <div class="card-header ">
+                <h5 class="mb-0" id="t-11">BẢNG LƯƠNG THÁNG 11</h5>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover table-nowrap ">
+                    <thead>
+                        <tr>
+                            <th scope="col">mã nhân viên</th>
+					        <th scope="col">họ tên</th>
+					        <th scope="col">chức vụ</th>
+					        <th scope="col">phòng</th>
+					        <th scope="col">hệ số lương</th>
+					        <th scope="col">ngày công</th>
+					        <th scope="col">tăng ca</th>
+					        <th scope="col">tiền tạm ứng</th>
+					        <th scope="col">bảo hiểm</th>
+					        <th scope="col">thuế</th>
+					        <th scope="col">thực lĩnh</th>
+                       
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>NV003</td>
+                            <td>Nguyễn Thị Diễm Kiều</td>
+                            <td>Quản lí </td>
+                            <td>Phòng hành chính-nhân sự</td>
+                            <td>8.03</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>402.014 VND</td>
+                            <td>49.235 VND</td>
+                            <td>11.520.451 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV004</td>
+                            <td>Trương Khánh Hòa</td>
+                            <td>kế toán chính</td>
+                            <td>Phòng tài chính-kế toán</td>
+                            <td>6.38</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>319.408 VND</td>
+                            <td>0</td>
+                            <td>10.299.506 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV005</td>
+                            <td>Nguyễn Duy Thiên</td>
+                            <td>Kế toán viên</td>
+                            <td>Phòng tài chính-kế</td>
+                            <td>4.98</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>249.319 VND</td>
+                            <td>0</td>
+                            <td>7.570.881 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV006</td>
+                            <td>Nguyễn Thành Đạt</td>
+                            <td>Bác sĩ cao cấp</td>
+                            <td>Răng-Hàm-Mặt</td>
+                            <td>8</td>
+                            <td>31</td>
+                            <td>1.050.000 VND</td>
+                            <td>0</td>
+                            <td>400.512 VND</td>
+                            <td>46.000 VND</td>
+                            <td>12.870.821 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV007</td>
+                            <td>Lê Hoàng Thiện</td>
+                            <td>KTV X.Quang</td>
+                            <td>Khoa X-Quang kĩ thuật số</td>
+                            <td>4.98</td>
+                            <td>29</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>250.813 VND</td>
+                            <td>0</td>
+                            <td>7.798.417 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV008</td>
+                            <td>Phùng Thị Phượng</td>
+                            <td>Điều dưỡng</td>
+                            <td>Phòng điều dưỡng</td>
+                            <td>6.78</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>340.434 VND</td>
+                            <td>0</td>
+                            <td>10.500.506 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV009</td>
+                            <td>Phạm Ngọc Tuyển</td>
+                            <td>Bác sĩ chính</td>
+                            <td>Điện não, điện cơ, thính lực, nhĩ lưỡng</td>
+                            <td>6.78</td>
+                            <td>30</td>
+                            <td>1.750.000 VND</td>
+                            <td>0</td>
+                            <td>350.434 VND</td>
+                            <td>0</td>
+                            <td>10.426.026 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV010</td>
+                            <td>Võ Thị Thu Hằng</td>
+                            <td>Điều dưỡng</td>
+                            <td>Phòng điều dưỡng</td>
+                            <td>6.78</td>
+                            <td>9</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>340.434 VND</td>
+                            <td>0</td>
+                            <td>2.691.226 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV011</td>
+                            <td>Nguyễn Thị Hàn Ny</td>
+                            <td>Điều dưỡng</td>
+                            <td>Phòng điều dưỡng</td>
+                            <td>6.78</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>300.000 VND</td>
+                            <td>340.434 VND</td>
+                            <td>0</td>
+                            <td>9.762.766 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV012</td>
+                            <td>Lê Văn Quàng</td>
+                            <td>KTV Xét nghiệm</td>
+                            <td>Khoa xét nghiệm</td>
+                            <td>4.89</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>500.000</td>
+                            <td>244.813 VND</td>
+                            <td>0</td>
+                            <td>7.284.157 VND</td>
+                        </tr>
+                         <tr>
+                            <td>NV013</td>
+                            <td>Nguyễn văn THuận</td>
+                            <td>KTV X.Quang</td>
+                            <td>Khoa X-Quang kĩ thuật số</td>
+                            <td>4.89</td>
+                            <td>30</td>
+                            <td>700.000 VND</td>
+                            <td>400.000 VND</td>
+                            <td>244.813 VND</td>
+                            <td>0</td>
+                            <td>7.084.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV014</td>
+                            <td>Ngô Thanh Tú</td>
+                            <td>Bác sĩ cao cấp</td>
+                            <td>Khoa nhi</td>
+                            <td>8</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>400.512 VND</td>
+                            <td>48.000 VND</td>
+                            <td>11.076.155 VND</td>
+                        </tr>
+                         <tr>
+                            <td>NV015</td>
+                            <td>Trần Thị Tuyết Nhung</td>
+                            <td>Bác sĩ cao cấp</td>
+                            <td>Khoa tai-mũi-họng</td>
+                            <td>8</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>400.512 VND</td>
+                            <td>48.000 VND</td>
+                            <td>11.473.488 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV016</td>
+                            <td>Đặng Thị Bích Hà</td>
+                            <td>Y tá chính</td>
+                            <td>Khoa nhi</td>
+                            <td>4.69</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>234.800 VND</td>
+                            <td>0</td>
+                            <td>7.884.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV017</td>
+                            <td>Lê Thị Mỹ Hạnh</td>
+                            <td>Bác sĩ chính</td>
+                            <td>Sản phụ khoa</td>
+                            <td>6.78</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>339.434 VND</td>
+                            <td>0</td>
+                            <td>9.762.766 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV018</td>
+                            <td>Nguyễn Văn Nhứt</td>
+                            <td>Bác sĩ cao cấp</td>
+                            <td>Khoa ngoại tổng quát</td>
+                            <td>8</td>
+                            <td>29</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>400.512 VND</td>
+                            <td>46.000 VND</td>
+                            <td>11.076.155 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV019</td>
+                            <td>Lương Thị Kim Trang</td>
+                            <td>Y tá chính</td>
+                            <td>Phòng lưu bệnh</td>
+                            <td>4.69</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>234.800 VND</td>
+                            <td>0</td>
+                            <td>7.300.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV020</td>
+                            <td>Phạm Kim Hồng Thảo</td>
+                            <td>Bác sĩ cao cấp</td>
+                            <td>Nội tổng quát và tim mạch</td>
+                            <td>8</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>400.512 VND</td>
+                            <td>48.000 VND</td>
+                            <td>11.576.155 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV021</td>
+                            <td>Lê Thị Mai Quỳnh</td>
+                            <td>Y tá chính</td>
+                            <td>Nội soi tiêu hóa</td>
+                            <td>4.69</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>234.800 VND</td>
+                            <td>0</td>
+                            <td>7.300.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV022</td>
+                            <td>Nguyễn Thị Đàm</td>
+                            <td>Điều dưỡng</td>
+                            <td>Phòng điều dưỡng</td>
+                            <td>6.78</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>500.000 VND</td>
+                            <td>340.434 VND</td>
+                            <td>0</td>
+                            <td>9.262.766 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV023</td>
+                            <td>Trần Thị Hương Thủy</td>
+                            <td>Điều dưỡng</td>
+                            <td>Phòng điều dưỡng</td>
+                            <td>6.78</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>340.434 VND</td>
+                            <td>0</td>
+                            <td>9.762.766 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV024</td>
+                            <td>Phùng Thị Bảo Ngân</td>
+                            <td>Y tá chính</td>
+                            <td>Khoa tai-mũi-họng</td>
+                            <td>4.69</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>234.800 VND</td>
+                            <td>0</td>
+                            <td>7.400.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV025</td>
+                            <td>Lê Minh Vũ</td>
+                            <td>Y tá</td>
+                            <td>Khoa nhi</td>
+                            <td>4.02</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>201.257 VND	</td>
+                            <td>0</td>
+                            <td>5.400.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV026</td>
+                            <td>Nguyễn Thị Mỹ Hiệp</td>
+                            <td>Y tá</td>
+                            <td>Sản phụ khoa</td>
+                            <td>4.02</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>201.257 VND</td>
+                            <td>0</td>
+                            <td>5.500.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV027</td>
+                            <td>Nguyễn Thị Mộng Hà</td>
+                            <td>Bác sĩ</td>
+                            <td>Khoa ngoại tổng quát</td>
+                            <td>4.98</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>249.319 VND</td>
+                            <td>0</td>
+                            <td>7.500.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV028</td>
+                            <td>Ngụy Mai Phương</td>
+                            <td>Y tá</td>
+                            <td>Phòng lưu bệnh</td>
+                            <td>4.02</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>201.257 VND</td>
+                            <td>0</td>
+                            <td>5.500.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV029</td>
+                            <td>Nguyễn Thị Hoa Lư</td>
+                            <td>Bác sĩ chính</td>
+                            <td>Nội soi tiêu hóa</td>
+                            <td>6.78</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>300.000</td>
+                            <td>340.434 VND</td>
+                            <td>0</td>
+                            <td>9.762.766 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV030</td>
+                            <td>Lê Nguyễn Thảo Sương</td>
+                            <td>Y tá chính</td>
+                            <td>Răng-Hàm-Mặt</td>
+                            <td>4.69</td>
+                            <td>29</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>234.800 VND	</td>
+                            <td>0</td>
+                            <td>5.500.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV031</td>
+                            <td>Võ Thị Lan Anh</td>
+                            <td>Y tá</td>
+                            <td>Răng-Hàm-Mặt</td>
+                            <td>4.02</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>201.257 VND	</td>
+                            <td>0</td>
+                            <td>5.300.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV032</td>
+                            <td>Trần Minh Tân</td>
+                            <td>Bảo vệ</td>
+                            <td>Hậu cần</td>
+                            <td>3.35</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>167.714 VND	</td>
+                            <td>0</td>
+                            <td>5.000.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV033</td>
+                            <td>Lê Thị Thu Thủy</td>
+                            <td>Lễ tân</td>
+                            <td>Chăm sóc khách hàng</td>
+                            <td>3.63</td>
+                            <td>31</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>181.732 VND</td>
+                            <td>0</td>
+                            <td>5.300.157 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV034</td>
+                            <td>Lê Thị Thanh Thủy</td>
+                            <td>Điều dưỡng</td>
+                            <td>Phòng lưu bệnh</td>
+                            <td>6.78</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>340.434 VND</td>
+                            <td>0</td>
+                            <td>9.662.766 VND</td>
+                        </tr>
+                        <tr>
+                            <td>NV035</td>
+                            <td>Đỗ Thành Long</td>
+                            <td>Lái xe</td>
+                            <td>Hậu cần</td>
+                            <td>4.69</td>
+                            <td>30</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>234.800 VND	</td>
+                            <td>0</td>
+                            <td>5.900.157 VND</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
+<!-- Carousel 1 -->
 <script>
-    $(document).ready(function(){
-        $('.single-item').slick();
+    var allCarousel = $(".carousel-item");
+    const thang = '';
+    
+    $("#button-delete").click(function(){
+        allCarousel.map((index,div) => {
+            if(div.classList.contains('active')) {
+                div.style.display = 'none';
+                allCarousel[index+1].addClass('active');
+            }
+        })
     });
+
+
+$("#modify").click(function(){
+  $(".change").attr("contenteditable","true");
+});
 </script>

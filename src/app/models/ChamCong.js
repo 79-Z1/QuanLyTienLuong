@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     MaNV: 'VARCHAR(10)',
     TrangThai: 'BIT',
-    Ngay: 'DATETIME',
+    Ngay: 'DATE',
     NghiHL: 'BIT'
   }, {
     sequelize,

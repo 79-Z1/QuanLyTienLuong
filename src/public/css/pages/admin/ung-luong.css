@@ -1,10 +1,12 @@
 .btnn{
     display: inline-block;
     padding: 10px 16px;
-    color: white;
-    background-color: #000;
     text-decoration: none;
     margin: 20px;
+    border-radius: 5px;
+    background-color: #2bb438;
+    border-color: #e7eaf0;
+    color: #fff;
 }
 .btnn:hover{
     /* border: 2px solid #ccc; */
@@ -20,4 +22,18 @@
 
 button:focus:not(:focus-visible) {
     outline: 0 !important;
+}
+.btn-neutral {
+    color: #16192c;
+    background-color: #2bb438;
+    border-color: #e7eaf0;
+    color: #fff;
+}
+.btn-neutral:hover{
+    opacity:0.7;
+}
+.btn-neutral2 {
+    color: #16192c;
+    background-color: #ff1515;
+    border-color: #e7eaf0;
 }

@@ -4,9 +4,11 @@ const path = require('path');
 const app = express();
 const port = 3000;
 const cors = require('cors');
+var cookieParser = require('cookie-parser');
 
 
 const route = require('./routes/index.router');
+app.use(cookieParser());
 const { sequelize } = require('./app/models/index');
 
 // Static file
@@ -39,7 +41,22 @@ app.engine(
 					return options.fn(this);
                 }
 				return options.inverse(this);
-			}
+			},
+			toVND: function(money,options) {
+				if(money) {
+					return money.toLocaleString('it-IT', {style : 'currency', currency : 'VND'});
+				} else {
+					return options.fn(this);
+				}
+			},
+			toUpperCase: function(text,options) {
+				if(text) {
+					return text.toUpperCase();
+				} else {
+					return options.fn(this);
+				}
+			},
+			
         },
 	}),
 );
@@ -48,6 +65,24 @@ app.set('views', path.join(__dirname, 'resources', 'views'));
 
 //# Routes init
 route(app);
+
+//@ midlleware
+app.get('/', function(req, res, next) {
+	 // Cookies that have not been signed
+	if(!req.cookies['tai khoan']) {
+		return res.redirect('/auth/login');
+	} else {
+		if (req.cookies['loai'] === 'NV') {
+			return res.redirect(`/${req.cookies['tai khoan']}`)
+		} else if ((req.cookies['loai'] === 'KT')) {
+			return res.redirect(`/admin/ketoan`)
+		} else {
+			return res.redirect(`/admin/quanly`);
+		}
+	}
+
+	
+})
 
 app.listen(port, async () => {
 	console.log(

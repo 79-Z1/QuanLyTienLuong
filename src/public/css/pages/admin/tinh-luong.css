@@ -1,0 +1,35 @@
+
+.search-container {
+    width: 100%;
+}
+
+.search-input  {
+    border: 1px solid #ccc;
+    width: 595px;
+}
+.cal{
+    border-radius:5px;
+    padding: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.search-option {
+    width: 200px;
+    margin-right: 10px;
+}
+
+.search-btn {
+    border: 1px solid #7b6bff;
+    color: #7b6bff;
+}
+.search-btn:hover {
+    background-color: #7b6bff;
+    color: #fff;
+}
+
+.input-group-append {
+    display: none;
+}
+.cal-salary{
+    margin-left: 404px;
+}

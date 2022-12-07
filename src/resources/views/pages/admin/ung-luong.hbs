@@ -15,46 +15,22 @@
 					<th></th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody> 
+				{{#each phieuUngLuong}}
 				<tr>
-					<td>UL001</td>
-					<td>NV001</td>
-					<td>2022/1/22</td>
-					<td>mổ ruột thừa</td>
-					<td>3.000.000</td>
-					<td><button class="btn btn-sm btn-neutral" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Duyệt</button></td>
+					<td>{{this.MaPhieu}}</td>
+					<td>{{this.MaNV}}</td>
+					<td>{{this.NgayUng}}</td>
+					<td>{{this.LyDo}}</td>
+					<td>{{#toVND this.SoTien}}{{/toVND}}</td>
+					<td><button class="btn btn-sm btn-neutral js-btn-duyet" data-bs-toggle="modal" data-ma-phieu="{{this.MaPhieu}}" data-bs-target="#staticBackdrop">Duyệt</button></td>
 					<td class="text-end">
-                        <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
-						<i class="bi bi-trash"></i>
+                        <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral2 text-danger-hover" data-ma-phieu="{{this.MaPhieu}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+							<i class="bi bi-trash"></i>
 						</button>
 					</td>
 				</tr>
-                <tr>
-					<td>UL002</td>
-					<td>NV002</td>
-					<td>2022/1/18</td>
-					<td>khám trĩ</td>
-					<td>4.000.000</td>
-					<td><button class="btn btn-sm btn-neutral" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Duyệt</button></td>
-					<td class="text-end">
-                        <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
-						<i class="bi bi-trash"></i>
-						</button>
-					</td>
-				</tr>
-                <tr>
-					<td>UL003</td>
-					<td>NV003</td>
-					<td>2022/3/18</td>
-					<td>khám trĩ</td>
-					<td>500.000</td>
-					<td><button class="btn btn-sm btn-neutral" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Duyệt</button></td>
-					<td class="text-end">
-                        <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
-						<i class="bi bi-trash"></i>
-						</button>
-					</td>
-				</tr>
+				{{/each}}
                 <!-- Modal1 -->
 					<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 						<div class="modal-dialog">
@@ -68,7 +44,7 @@
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btnn " data-bs-dismiss="modal">Close</button>
-								<button type="button" class="btnn " data-bs-dismiss="modal">Yes</button>
+								<button type="button" class="btnn duyet-yes-btn" data-bs-dismiss="modal">Yes</button>
 							</div>
 							</div>
 						</div>
@@ -86,7 +62,7 @@
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btnn " data-bs-dismiss="modal">Close</button>
-								<button type="button" class="btnn " data-bs-dismiss="modal">Yes</button>
+								<button type="button" class="btnn xoa-yes-btn" data-bs-dismiss="modal">Yes</button>
 							</div>
 							</div>
 						</div>
@@ -95,3 +71,36 @@
 		</table>
 	</div>
 </div>
+
+<script>
+	let maPhieu = '';
+
+	$('.js-btn-duyet').on('click',async function() {
+		maPhieu = $(this).data("ma-phieu");
+	})
+
+	$('.duyet-yes-btn').on('click',async function(e) {
+		await checkUngLuong(maPhieu, 1);
+		window.location.reload();
+	})
+
+
+	$('.btn-xoa').on('click',async function() {
+		maPhieu = $(this).data("ma-phieu");
+		console.log(maPhieu)
+	})
+
+	$('.xoa-yes-btn').on('click',async function() {
+		await checkUngLuong(maPhieu, 0);
+		window.location.reload();
+	})
+
+
+	async function checkUngLuong(maphieu, isduyet) {
+		const payload = {
+			maphieu: maphieu,
+			duyet: isduyet
+		}
+		return (await instance.put('/admin/ung-luong/check', payload)).data
+	}
+</script>

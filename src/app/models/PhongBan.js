@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   PhongBan.init({
     MaPhong: {
-      type: 'VARCHAR(5)',
+      type: 'VARCHAR(10)',
       primaryKey: true,
     },
     TenPhong: 'NVARCHAR(50)',

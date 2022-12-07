@@ -15,44 +15,22 @@
 				</tr>
 			</thead>
 			<tbody>
+				{{#each donKhieuNai}}
 				<tr>
-					<td>KN001</td>
-					<td>NV007</td>
-					<td>2022/01/04</td>
-					<td>Số ca chấm công bị thiếu</td>
-					<td><button class="btn btn-sm btn-neutral" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Duyệt</button></td>
+					<td>{{this.MaDon}}</td>
+					<td>{{this.MaNV}}</td>
+					<td>{{this.ThoiGian}}</td>
+					<td>{{this.LyDo}}</td>
+					<td><button class="btn btn-sm btn-neutral js-btn-duyet" data-bs-toggle="modal" data-ma-don="{{this.MaDon}}" data-bs-target="#staticBackdrop">Duyệt</button></td>
 					<td class="text-end">
-                        <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
-						<i class="bi bi-trash"></i>
+                        <button type="button" class="btn btn-sm btn-xoa btn-square btn-neutral2 text-danger-hover" data-ma-don="{{this.MaDon}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+							<i class="bi bi-trash"></i>
 						</button>
 					</td>
 				</tr>
-                <tr>
-					<td>KN002</td>
-					<td>NV013</td>
-					<td>2022/02/06</td>
-					<td>Tiền lương nhận bị thiếu</td>
-					<td><button class="btn btn-sm btn-neutral" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Duyệt</button></td>
-					<td class="text-end">
-                        <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
-						<i class="bi bi-trash"></i>
-						</button>
-					</td>
-				</tr>
-                <tr>
-					<td>KN003</td>
-					<td>NV017</td>
-					<td>2022/02/06</td>
-					<td>Tiền lương nhận bị thiếu</td>
-					<td><button class="btn btn-sm btn-neutral" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Duyệt</button></td>
-					<td class="text-end">
-                        <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
-						<i class="bi bi-trash"></i>
-						</button>
-					</td>
-				</tr>
+				{{/each}}
                 <!-- Modal1 -->
-					<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabe1" aria-hidden="true">
+					<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 						<div class="modal-dialog">
 							<div class="modal-content">
 							<div class="modal-header">
@@ -64,25 +42,25 @@
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btnn " data-bs-dismiss="modal">Close</button>
-								<button type="button" class="btnn " data-bs-dismiss="modal">Yes</button>
+								<button type="button" class="btnn duyet-yes-btn" data-bs-dismiss="modal">Yes</button>
 							</div>
 							</div>
 						</div>
 					</div>
                 <!-- Modal2 -->
 					<div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-						<div class="modal-dialog">
+						<div class="modal-dialog test-modal">
 							<div class="modal-content">
 							<div class="modal-header">
-								<h5 class="modal-title" id="staticBackdropLabe4">Xác nhận</h5>
+								<h5 class="modal-title" id="staticBackdropLabel">Xác nhận</h5>
 								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 							</div>
 							<div class="modal-body">
-								<h3>Bạn có chắc chắn muốn xóa đơn khiếu nại này không</h3>
+								<h3>Bạn có chắc chắn muốn xóa phiếu ứng lương này không</h3>
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btnn " data-bs-dismiss="modal">Close</button>
-								<button type="button" class="btnn " data-bs-dismiss="modal">Yes</button>
+								<button type="button" class="btnn xoa-yes-btn" data-bs-dismiss="modal">Yes</button>
 							</div>
 							</div>
 						</div>
@@ -91,3 +69,37 @@
 		</table>
 	</div>
 </div>
+
+<script>
+	let maDon = '';
+
+	$('.js-btn-duyet').on('click',async function() {
+		maDon = $(this).data("ma-don");
+
+	})
+
+	$('.duyet-yes-btn').on('click',async function(e) {
+		await checkUngLuong(maDon, 1);
+		window.location.reload();
+	})
+
+
+	$('.btn-xoa').on('click',async function() {
+		maDon = $(this).data("ma-don");
+		console.log(maDon)
+	})
+
+	$('.xoa-yes-btn').on('click',async function() {
+		await checkUngLuong(maDon, 0);
+		window.location.reload();
+	})
+
+
+	async function checkUngLuong(maDon, isduyet) {
+		const payload = {
+			maDon: maDon,
+			duyet: isduyet
+		}
+		return (await instance.put('/admin/khieu-nai/check', payload)).data
+	}
+</script>

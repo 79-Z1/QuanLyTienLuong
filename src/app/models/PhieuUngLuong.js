@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
     },
     MaNV: 'VARCHAR(10)',
-    NgayUng: 'DATETIME',
+    NgayUng: 'DATE',
     LyDo: 'NVARCHAR(MAX)',
     SoTien: 'DECIMAL',
     Duyet: 'BIT'

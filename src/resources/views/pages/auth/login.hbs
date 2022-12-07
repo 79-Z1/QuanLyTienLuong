@@ -36,9 +36,10 @@
 			<label for='username' class='form-label '>Username</label>
 			<input type='text' class='form-control username' id='username' />
 		</div>
-		<div class='mb-3 w-100'>
-			<label for='password' class='form-label'>Password</label>
-			<input type='password' class='form-control password' id='password' />
+		<div class=' mb-3 w-100'>
+			<label for='password' class='form-labe'>Password</label>
+				<input type='password' class="mb-3 w-100 form-control password" id='password'/>
+			
 		</div>
 
 		<button type='submit' class='btn btn-primary w-100' id='submit-btn'>
@@ -83,6 +84,4 @@
 		}
 		return (await instance.post('/auth/login', payload)).data
 	}
-
-	
 </script>

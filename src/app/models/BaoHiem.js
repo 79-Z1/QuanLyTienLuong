@@ -20,7 +20,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     MaNV: 'VARCHAR(10)',
     SoThe: 'VARCHAR(12)',
-    LoaiBH: 'NVARCHAR(50)',
     NgayCapNhat: 'DATE',
     NgayHetHan: 'DATE',
     NoiCap: 'NVARCHAR(50)'

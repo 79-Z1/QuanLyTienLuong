@@ -7,10 +7,34 @@
 }
 
 body {
-
+    margin: 0 auto ;
 }
 
 li {
     list-style: none;
 }
 
+table {
+    /* text-align: center !important;*/
+} 
+
+table th {
+    font-weight: 700!important;
+    font-size: 15px !important;
+    color: #000;
+}
+table td {
+
+    font-size: 14px !important;
+}
+
+.btn-outline-purple{
+
+    border: 1px solid #7b6bff;
+    color: #7b6bff; 
+}
+.btn-outline-purple:hover{
+    border: 1px solid #7b6bff;
+    color: #ffffff;
+    background-color: 7b6bff;
+}

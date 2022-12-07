@@ -1,0 +1,32 @@
+input{
+    width: 120px;
+    height: 30px;
+    border-bottom: 0.5px solid;
+}
+/* .table td {
+    padding: 10px;
+} */
+.search-btn {
+    border: 1px solid #7b6bff;
+    color: #7b6bff;
+}
+.search-btn:hover {
+    background-color: #7b6bff;
+}
+/* .col2{
+    width:15%;
+} */
+
+.col2 {
+    padding-right: 0px !important;
+    width: fit-content !important;
+}
+
+input 
+{
+
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+    width: 300px;
+    padding-left: 10px;
+}

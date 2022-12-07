@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
 	TaiKhoan.init(
 		{
 			TenTaiKhoan: {
-				type: 'VARCHAR(20)',
+				type: 'VARCHAR(10)',
 				primaryKey: true,
 			},
 			MaNV: 'VARCHAR(10)',

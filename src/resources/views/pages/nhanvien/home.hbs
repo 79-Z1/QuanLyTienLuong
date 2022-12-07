@@ -9,12 +9,8 @@
 	<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css' />
 	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css' />
 	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css' />
-	{{!@ FONT AND ICON }}
+
 	<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css' />
-	<link rel='preconnect' href='https://fonts.googleapis.com' />
-	<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
-	<link href='https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap'
-		rel='stylesheet' />
 	<link rel='stylesheet' href='/css/app.css' />
 	<link rel='stylesheet' href='/css/{{style}}' />
 	{{!------------------------- SCRIPT ----------------------------------}}
@@ -36,260 +32,393 @@
 					<div class="card card-style1 border-0">
 						<div class="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7">
 							<div class="row align-items-center">
-								<div class="col-lg-4 mb-4 mb-lg-0 profile-left-container">
-									<div class="bg-dark d-lg-inline-block py-1-9 px-1-9 px-sm-6 mb-1-9 rounded w-100">
-										<h3 class="h2 text-white mb-0">{{nhanvien.HoTen}}</h3>
-										<h5 class="text-primary">{{nhanvien.TenCV}}</h5>
-									</div>
-									{{#ifCond nhanvien.GioiTinh 'Nữ'}}
+								<div class="info-wrapper d-flex align-items-center">
+									<div class="col-lg-4 mb-4 mb-lg-0 profile-left-container">
+										<div
+											class="bg-dark d-lg-inline-block py-1-9 px-1-9 px-sm-6 mb-1-9 rounded w-100">
+											<h3 class="h2 text-white mb-0">{{nhanvien.HoTen}}</h3>
+											<h5 class="text-primary">{{nhanvien.TenChucVu}}</h5>
+										</div>
+										{{#ifCond nhanvien.GioiTinh 'Nữ'}}
 										<img src="/img/avatar-female.jpg" class="avatar" alt="female">
-									{{/ifCond}}
-									{{#ifCond nhanvien.GioiTinh 'Nam'}}
+										{{/ifCond}}
+										{{#ifCond nhanvien.GioiTinh 'Nam'}}
 										<img src="/img/avatar-male.jpg" class="avatar" alt="male">
-									{{/ifCond}}
-								</div>
-								<div class="col-lg-8 px-xl-10 profile-right-container">
-									<ul class="list-unstyled mb-1-9">
-										
-										<li class="mb-2 mb-xl-3 display-28">
-											<span class="display-26 text-secondary me-2 font-weight-600">
-											Mã nhân viên:</span>
-											{{nhanvien.MaNV}}
-										</li>
-										
-										<li class="mb-2 mb-xl-3 display-28">
-											<span class="display-26 text-secondary me-2 font-weight-600">
-											Phòng:</span>{{nhanvien.TenPhong}}
-										</li>
-										<li class="mb-2 mb-xl-3 display-28">
-											<span class="display-26 text-secondary me-2 font-weight-600">
-											Giới tính:</span> {{nhanvien.GioiTinh}} </li>
-										<li class="mb-2 mb-xl-3 display-28">
-											<span class="display-26 text-secondary me-2 font-weight-600">
-											Ngày sinh:</span>{{nhanvien.NgaySinh}} </li>
-										<li class="mb-2 mb-xl-3 display-28">
-											<span class="display-26 text-secondary me-2 font-weight-600">
-											Địa chỉ:</span> {{nhanvien.DiaChi}}</li>
-										<li class="mb-2 mb-xl-3 display-28">
-											<span class="display-26 text-secondary me-2 font-weight-600">
-											Số tài khoản:</span> {{nhanvien.STK}}</li>
-										<li class="mb-2 mb-xl-3 display-28">
-											<span class="display-26 text-secondary me-2 font-weight-600">
-											CMND:</span>{{nhanvien.CMND}}</li>
-										<li class="mb-2 mb-xl-3 display-28">
-											<span class="display-26 text-secondary me-2 font-weight-600">
-											Số bảo hiểm:</span>{{nhanvien.SoBH}}</li>
-										<li class="mb-2 mb-xl-3 display-28">
-											<span class="display-26 text-secondary me-2 font-weight-600">
-											Số điện thoại:</span> {{nhanvien.SDT}}</li>
-									</ul>
-								</div>
-								<div class="col-lg-12 grid-table">
-					<table class="table ">
-						<thead>
-							<tr>
-								<th scope="col">Tháng</th>
-								<th scope="col">Lương cơ bản</th>
-								<th scope="col">Tăng ca</th>
-								<th scope="col">Bảo hiểm xã hội</th>
-								<th scope="col">Thuế</th>
-								<th scope="col">Lương thực nhận</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<th scope="row">1</th>
-								<td>15.000.000đ</td>
-								<td>700.000đ</td>
-								<td>400.000đ</td>
-								<td>400.000đ</td>
-								<td>13.500.000đ</td>
-			
-							</tr>
-							<tr>
-								<th scope="row">2</th>
-								<td>15.000.000đ</td>
-								<td>700.000đ</td>
-								<td>400.000đ</td>
-								<td>400.000đ</td>
-								<td>13.500.000đ</td>
-							</tr>
-							<tr>
-								<th scope="row">3</th>
-								<td>15000000đ</td>
-								<td>700.000đ</td>
-								<td>400.000đ</td>
-								<td>400.000đ</td>
-								<td>13.500.000đ</td>
-							</tr>
-							
-						</tbody>
-					</table>
+										{{/ifCond}}
+									</div>
+									<div class="col-lg-8 px-xl-10 profile-right-container">
+										<ul class="list-unstyled">
 
-					<div class="option-buttons d-flex ">
-						<button type="button" class="btnn "data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ứng lương</button>
-						<button type="button" class="btnn "data-bs-toggle="modal" data-bs-target="#staticBackdrop1">khiếu nại</button>
-						<button type="button" class="btnn "data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Xem bảng chấm công</button>
-						<button type="button" class="btnn ms-auto">Đăng xuất</button>
-						<!-- Button trigger modal -->
+											<li class="mb-2 mb-xl-3 display-28">
+												<span class="display-26 text-secondary me-2 font-weight-600">
+													Mã nhân viên:</span>
+												{{nhanvien.MaNV}}
+											</li>
 
-						<!-- Modal -->
-						<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-							<div class="modal-dialog">
-								<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title" id="staticBackdropLabel">Phiếu ứng lương</h5>
-									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+											<li class="mb-2 mb-xl-3 display-28">
+												<span class="display-26 text-secondary me-2 font-weight-600">
+													Phòng:</span>{{nhanvien.TenPhong}}
+											</li>
+											<li class="mb-2 mb-xl-3 display-28">
+												<span class="display-26 text-secondary me-2 font-weight-600">
+													Giới tính:</span> {{nhanvien.GioiTinh}}
+											</li>
+											<li class="mb-2 mb-xl-3 display-28">
+												<span class="display-26 text-secondary me-2 font-weight-600">
+													Ngày sinh:</span>{{nhanvien.NgaySinh}}
+											</li>
+											<li class="mb-2 mb-xl-3 display-28">
+												<span class="display-26 text-secondary me-2 font-weight-600">
+													Địa chỉ:</span> {{nhanvien.DiaChi}}
+											</li>
+											<li class="mb-2 mb-xl-3 display-28">
+												<span class="display-26 text-secondary me-2 font-weight-600">
+													Số tài khoản:</span> {{nhanvien.STK}}
+											</li>
+											<li class="mb-2 mb-xl-3 display-28">
+												<span class="display-26 text-secondary me-2 font-weight-600">
+													CMND:</span>{{nhanvien.CMND}}
+											</li>
+											<li class="mb-2 mb-xl-3 display-28">
+												<span class="display-26 text-secondary me-2 font-weight-600">
+													Số điện thoại:</span> {{nhanvien.SDT}}
+											</li>
+										</ul>
+									</div>
 								</div>
-								<div class="modal-body">
-									<h3>Nhập số tiền</h3>
-									<input type="number"id="replyNumber" min="1000000" data-bind="value:replyNumber" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-									<h3>Lý do</h3>
-									<textarea ></textarea>
+
+								<div class="col-lg-12 grid-table my-7">
+									<table class="table text-center">
+										<thead>
+											<tr>
+												<th scope="col">Tháng </th>
+												<th scope="col">Hệ số lương</th>
+												<th scope="col">Số ngày công</th>
+												<th scope="col">Tiền tạm ứng</th>
+												<th scope="col">Tiền tăng ca</th>
+												<th scope="col">Trừ bảo hiểm</th>
+												<th scope="col">Thuế</th>
+												<th scope="col">Lương thực lĩnh</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td scope="row">12</td>
+												<td>{{dataLuong.HeSoLuong}}</td>
+												<td>{{dataLuong.SoNgayCong}}</td>
+												<td>{{#toVND dataLuong.TamUng}}{{/toVND}}</td>
+												<td>{{#toVND dataLuong.TienTangCa}}{{/toVND}}</td>
+												<td>{{#toVND dataLuong.BaoHiem}}{{/toVND}}</td>
+												<td>{{#toVND dataLuong.Thue}}{{/toVND}}</td>
+												<td>{{#toVND dataLuong.TienThucLinh}}{{/toVND}}</td>
+											</tr>
+
+										</tbody>
+									</table>
+
+									<div class="option-buttons d-flex ">
+										<button type="button" class="btnn " data-bs-toggle="modal"
+											data-bs-target="#staticBackdrop">ỨNG LƯƠNG</button>
+										<button type="button" class="btnn " data-bs-toggle="modal"
+											data-bs-target="#staticBackdrop1">KHIẾU NẠI</button>
+										<button type="button" class="btnn " data-bs-toggle="modal"
+											data-bs-target="#staticBackdrop2">XEM BẢNG CHẤM CÔNG</button>
+										<button type="button" class="btnn ms-auto" id="exit">ĐĂNG XUẤT</button>
+										<!-- Button trigger modal -->
+
+										<!-- Modal -->
+										<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+											data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+											aria-hidden="true">
+											<div class="modal-dialog">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h5 class="modal-title" id="staticBackdropLabel">
+															Phiếu ứng lương
+														</h5>
+														<button type="button" class="btn-close" data-bs-dismiss="modal"
+															aria-label="Close"></button>
+													</div>
+
+													<div class="modal-body ">
+														<div class="p-3">
+															<h3>Nhập số tiền</h3>
+															<input type="number" id="replyNumber" min="1000000"
+																data-bind="value:replyNumber"
+																class="form-control ungluong-sotien"
+																aria-describedby="inputGroup-sizing-sm">
+														</div>
+														<div class="p-3">
+															<h3>Lý do</h3>
+															<textarea class="modal-body ungluong-lydo"></textarea>
+														</div>
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btnn " data-bs-dismiss="modal">
+															Hủy
+														</button>
+														<button type="button" class="btnn ungluong-xacnhan"
+															data-bs-dismiss="modal">
+															Xác nhận
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- Modal 1-->
+										<div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static"
+											data-bs-keyboard="false" tabindex="-1"
+											aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+											<div class="modal-dialog">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h5 class="modal-title" id="staticBackdropLabel1">Khiếu nại</h5>
+														<button type="button" class="btn-close" data-bs-dismiss="modal"
+															aria-label="Close"></button>
+													</div>
+													<div class="modal-body">
+														<h3>Lý do</h3>
+														<textarea class="khieunai-lydo"></textarea>
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btnn"
+															data-bs-dismiss="modal">Hủy</button>
+														<button type="button" class="btnn khieunai-xacnhan" data-bs-dismiss="modal">
+															Xác nhận
+														</button>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- Modal 2-->
+										<div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static"
+											data-bs-keyboard="false" tabindex="-1"
+											aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+											<div class="modal-dialog test-modal">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h5 class="modal-title" id="staticBackdropLabel1">
+															Bảng chấm công
+														</h5>
+														<button type="button" class="btn-close" data-bs-dismiss="modal"
+															aria-label="Close"></button>
+													</div>
+													<div class="modal-body">
+														<div id="khongbietdatten" class="card shadow border-0 mb-7 mt-5  ">
+																		<div class="card-header ">
+																			<h5 class="mb-0">Bảng chấm công tháng 11</h5>
+																		</div>
+																		<div class="table-responsive">
+																			<table
+																				class="table table-hover table-nowrap ">
+																				<thead>
+																					<tr>
+																						<th style="text-align: center;" scope="col">Ngày</th>
+																						<th scope="col">Tình trạng</th>
+																						<th scope="col">Nghỉ HL</th>
+																					</tr>
+																				</thead>
+																				<tbody style="text-align: center;">
+																					<tr>
+																						<td>01/11/2022</td>
+																						<td>1</td>																						
+																						<td>0</td>
+																					</tr>
+																					<tr>
+																						<td>02/11/2022</td>
+																						<td>0</td>																						
+																						<td>0</td>
+																					</tr>
+																					<tr>
+																						<td>03/11/2022</td>
+																						<td>1</td>																						
+																						<td>0</td>
+																					</tr>
+																					<tr>
+																						<td>04/11/2022</td>
+																						<td>1</td>																						
+																						<td>0</td>
+																					</tr>
+																					<tr>
+																						<td>05/11/2022</td>
+																						<td>1</td>																						
+																						<td>0</td>
+																					</tr>
+																					<tr>
+																						<td>06/11/2022</td>
+																						<td>0</td>																						
+																						<td>0</td>
+																					</tr>
+																					<tr>
+																						<td>07/11/2022</td>
+																						<td>1</td>																						
+																						<td>0</td>
+																					</tr>
+																					<tr>
+																						<td>08/11/2022</td>
+																						<td>1</td>																						
+																						<td>0</td>
+																					</tr>
+																					<tr>
+																						<td>09/11/2022</td>
+																						<td>0</td>																						
+																						<td>1</td>
+																					</tr>
+																					<tr>
+																						<td>10/11/2022</td>
+																						<td>1</td>																						
+																						<td>0</td>
+																					</tr>
+																					<tr>
+																						<td>11/11/2022</td>
+																						<td>1</td>																						
+																						<td>0</td>
+																					</tr>
+																					<tr>
+																						<td>12/11/2022</td>
+																						<td>1</td>																						
+																						<td>0</td>
+																					</tr>
+																					<tr>
+																						<td>13/11/2022</td>
+																						<td>1</td>																						
+																						<td>0</td>
+																					</tr>
+																					<tr>
+																						<td>14/11/2022</td>
+																						<td>1</td>																						
+																						<td>0</td>
+																					</tr>
+																					<tr>
+																						<td>15/11/2022</td>
+																						<td>1</td>																						
+																						<td>0</td>
+																					</tr>
+																					<tr>
+																						<td>16/11/2022</td>
+																						<td>1</td>																						
+																						<td>0</td>
+																					</tr>
+																					<tr>
+																						<td>17/11/2022</td>
+																						<td>1</td>																						
+																						<td>0</td>
+																					</tr>
+																					<tr>
+																						<td>18/11/2022</td>
+																						<td>1</td>																						
+																						<td>0</td>
+																					</tr>
+																					<tr>
+																						<td>19/11/2022</td>
+																						<td>1</td>																						
+																						<td>0</td>
+																					</tr>
+																					<tr>
+																						<td>20/11/2022</td>
+																						<td>1</td>																						
+																						<td>0</td>
+																					</tr>
+																					<tr>
+																						<td>21/11/2022</td>
+																						<td>1</td>																						
+																						<td>0</td>
+																					</tr>
+																					<tr>
+																						<td>22/11/2022</td>
+																						<td>1</td>																						
+																						<td>0</td>
+																					</tr>
+																					<tr>
+																						<td>23/11/2022</td>
+																						<td>1</td>																						
+																						<td>0</td>
+																					</tr>
+																					<tr>
+																						<td>24/11/2022</td>
+																						<td>1</td>																						
+																						<td>0</td>
+																					</tr>
+																					<tr>
+																						<td>25/11/2022</td>
+																						<td>1</td>																						
+																						<td>0</td>
+																					</tr>
+																					<tr>
+																						<td>26/11/2022</td>
+																						<td>1</td>																						
+																						<td>0</td>
+																					</tr>
+																					<tr>
+																						<td>27/11/2022</td>
+																						<td>1</td>																						
+																						<td>0</td>
+																					</tr>
+																					<tr>
+																						<td>28/11/2022</td>
+																						<td>1</td>																						
+																						<td>0</td>
+																					</tr>
+																					<tr>
+																						<td>29/11/2022</td>
+																						<td>1</td>																						
+																						<td>0</td>
+																					</tr>
+																					<tr>
+																						<td>30/11/2022</td>
+																						<td>1</td>																						
+																						<td>0</td>
+																					</tr>
+																				</tbody>
+																			</table>
+																		</div>
+																	</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
 								</div>
-								<div class="modal-footer">
-									<button type="button" class="btnn " data-bs-dismiss="modal">Hủy</button>
-									<button type="button" class="btnn " data-bs-dismiss="modal">Xác nhận</button>
-								</div>
-								</div>
-							</div>
-						</div>
-						<!-- Modal 1-->
-						<div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
-							<div class="modal-dialog">
-								<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title" id="staticBackdropLabel1">Khiếu nại</h5>
-									<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-								</div>
-								<div class="modal-body">									
-									<h3>Lý do</h3>
-									<textarea></textarea>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btnn " data-bs-dismiss="modal">Hủy</button>
-									<button type="button" class="btnn " data-bs-dismiss="modal">Xác nhận</button>
-								</div>
-								</div>
-							</div>
-						</div>
-						<!-- Modal 2-->
-						<div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
-						<div class="modal-dialog test-modal">
-							<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title" id="staticBackdropLabel1">Bảng chấm công</h5>
-								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-							</div>
-							<div class="modal-body">
-                                    <div class="card shadow border-0 mb-7 mt-5  ">
-                                        <div class="card-header ">
-                                            <h5 class="mb-0">Bảng chấm công tháng 12</h5>
-                                        </div>
-                                        <div class="table-responsive">
-                                            <table class="table table-hover table-nowrap ">
-                                                <thead >
-                                                    <tr>
-                                                        <th scope="col">Mã công</th>
-                                                        <th scope="col">Mã nhân viên</th>
-                                                        <th scope="col">Tình trạng</th>
-                                                        <th scope="col">Ngày</th>
-                                                        <th scope="col">Nghỉ HL</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody >
-                                                    <tr>
-                                                        <td>CC00001</td>
-                                                        <td>NV003</td>
-                                                        <td>1</td>
-                                                        <td>2022/12/01</td>
-                                                        <td>0</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>CC00001</td>
-                                                        <td>NV003</td>
-                                                        <td>1</td>
-                                                        <td>2022/12/02</td>
-                                                        <td>0</td>
-                                                    </tr>
-													<tr>
-                                                        <td>CC00001</td>
-                                                        <td>NV003</td>
-                                                        <td>0</td>
-                                                        <td>2022/12/03</td>
-														<td>1</td>
-													<tr>
-                                                        <td>CC00001</td>
-                                                        <td>NV003</td>
-                                                        <td>1</td>
-                                                        <td>2022/12/04</td>
-                                                        <td>0</td>
-                                                    </tr>
-													<tr>
-                                                        <td>CC00001</td>
-                                                        <td>NV003</td>
-                                                        <td>1</td>
-                                                        <td>2022/12/05</td>
-                                                        <td>0</td>
-                                                    </tr>
-													<tr>
-                                                        <td>CC00001</td>
-                                                        <td>NV003</td>
-                                                        <td>1</td>
-                                                        <td>2022/12/05</td>
-                                                        <td>0</td>
-                                                    </tr>
-													<tr>
-                                                        <td>CC00001</td>
-                                                        <td>NV003</td>
-                                                        <td>1</td>
-                                                        <td>2022/12/05</td>
-                                                        <td>0</td>
-                                                    </tr>
-													<tr>
-                                                        <td>CC00001</td>
-                                                        <td>NV003</td>
-                                                        <td>1</td>
-                                                        <td>2022/12/05</td>
-                                                        <td>0</td>
-                                                    </tr>
-													<tr>
-                                                        <td>CC00001</td>
-                                                        <td>NV003</td>
-                                                        <td>1</td>
-                                                        <td>2022/12/05</td>
-                                                        <td>0</td>
-                                                    </tr>
-													<tr>
-                                                        <td>CC00001</td>
-                                                        <td>NV003</td>
-                                                        <td>1</td>
-                                                        <td>2022/12/06</td>
-                                                        <td>0</td>
-                                                    </tr>
-														
-                                                   
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-							</div>
-							
-							</div>
-						</div>
-						</div>
-					</div>
-					
-				</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 </body>
+
 </html>
 
 <script>
+	$('#exit').on('click', function () {
+		instance.deleteAllCookie();
+		window.location.replace('/auth/login')
+	})
+
+	$('.ungluong-xacnhan').on('click',async function () {
+		await UngLuong();
+		alert('thành công!!!');
+	})
 	
+	$('.khieunai-xacnhan').on('click',async function () {
+		await KhieuNai();
+		alert('thành công!!!');
+	})
+
+	async function UngLuong() {
+		const payload = {
+			manv: await instance.getCookie('tai khoan'),
+			lydo: $('.ungluong-lydo').val(), 
+			sotien: $('.ungluong-sotien').val()
+		}
+		return (await instance.post('/ung-luong', payload)).data;
+	}
+
+	async function KhieuNai() {
+		const payload = {
+			manv: await instance.getCookie('tai khoan'),
+			lydo: $('.khieunai-lydo').val(), 
+		}
+		return (await instance.post('/khieu-nai', payload)).data
+	}
 </script>

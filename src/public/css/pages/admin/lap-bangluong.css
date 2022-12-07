@@ -1,17 +1,23 @@
+.card {
+    position: relative;
+    height: 100vh;
+    width: 80vw;
+    margin: 0 auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.text-end {
+    text-align: left!important;
+}
 .single-item {
 
 }
 
-.slick-prev {
- 
-}
-.test-modal {
-    max-width: 1200px!important;
-}
-.slick-prev::before {
 
-    /* background-color: #000; */
+.test-modal {
+    max-width: 1300px!important;
 }
+
 .thu-nho-luong{
     margin-left: 22px;
     margin-right: 30px;
@@ -26,9 +32,13 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-.khongbietdatten{
-    max-height: 700px;
+.slick-prev,.slick-next {
+    z-index: 999;
+    top: 50%;
+    position: absolute;
 }
+
+
 /* .slick-list {
     overflow: auto;
 } */
@@ -38,14 +48,32 @@
 .btnn{
     /* display: inline-block; */
     padding: 10px 16px;
-    color: white;
-    background-color: #000;
+    color: rgb(0, 0, 0);
+    background-color: rgb(70, 255, 82);
     text-decoration: none;
     margin: 20px;
+    border: 2px solid rgb(40, 200, 50);
+    border-radius: 10px;  
+}
+.btn{
+    border-radius: 50px;
+    border: 1px solid #7b6bff;
+    color: #7b6bff;
+    margin: 10px;
+    width: 15%;
+    line-height: 2;
+}
+.color-btn:hover {
+    background-color:#7b6bff;
 }
 .btnn:hover{
     /* border: 2px solid #ccc; */
-    background-color: #ccc;
-    color: #000;
+    opacity:0.7;
     cursor: pointer;
+}
+.change{
+    padding: 10px;
+}
+.modal-body{
+    padding: 0 1.5rem;
 }

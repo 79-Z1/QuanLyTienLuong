@@ -1,0 +1,541 @@
+<div class=" d-flex flex-row-reverse ">
+    <button type="button" class="btn  color-btn p-2" data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop">Xóa bảng </button>
+    <button type="button" class="btn   color-btn p-2" data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop2">Cập nhật bảng </button>
+    {{!-- <button type="button" class="btn   color-btn p-2" data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop1">Thêm Bảng </button> --}}
+    
+    {{!--Start Modal Xóa bảng lương --}}
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Xóa bảng chấm công</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h1>Bạn có chắc muốn xóa bảng chấm công này?</h1>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn   color-btn p-2 " data-bs-dismiss="modal">No</button>
+                    <button type="button" class="btn   color-btn p-2" data-bs-dismiss="modal">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{!--End Modal Xóa bảng lương --}}
+    {{!--Start Modal Thêm bảng lương --}}
+    {{!-- <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel2" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel2">Cập nhật bảng chấm công</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h3>Cập nhật bảng chấm công ngày <span>20</span> tháng <span>12</span> năm <span>2022</span></h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn   color-btn p-2" data-bs-dismiss="modal">No</button>
+                    <button type="button" class="btn   color-btn p-2" data-bs-dismiss="modal">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div> --}}
+    {{!--End Modal Thêm bảng lương --}}
+    {{!--Start Modal Sửa bảng lương --}}
+    <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+        <div class="modal-dialog test-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel1">Lập bảng chấm công</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card shadow border-0 mb-7 mt-5  ">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-nowrap ">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">mã nhân viên</th>
+                                        <th scope="col">họ tên</th>
+                                        <th scope="col">chức vụ</th>                                    
+                                        <th scope="col">Phòng</th>                                    
+                                        <th scope="col">Tình trạng</th>
+                                        <th scope="col">Nghỉ có hưởng lương</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>NV003</td>
+                                        <td>Nguyễn Thị Diễm Kiều</td>
+                                        <td>Quản lý</td>
+                                        <td>Quản lý</td>
+                                        <td>
+                                            <select class="form-select search-option">
+                                                <option value="1">Đi làm</option>
+                                                <option value="2">Không đi làm</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <input type="checkbox" class="larger">
+                                        </td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn   color-btn p-2" data-bs-dismiss="modal">Hủy sửa
+                        đổi</button>
+                    <button type="button" class="btn   color-btn p-2" data-bs-dismiss="modal">Xác nhận sửa
+                        đổi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{!--End Modal Sửa bảng lương --}}
+</div>
+<div class="single-item ">
+    <div class="card shadow border-0 mb-7 mt-5 ">
+        <div class="card-header d-flex flex-row">
+            <h5 class="mb-0">BẢNG CHẤM CÔNG</h5>
+            <input type="date" id="start"  min="2016-23-06 " value="2022-12-31">
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover table-nowrap">
+                 <thead class="thead-light">
+                    <tr>
+                        <th scope="col">mã nhân viên</th>
+                        <th scope="col">họ tên</th>
+                        <th scope="col">tình trạng</th>
+                        <th scope="col">Nghỉ có hưởng lương</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>NV003</td>
+                        <td>Nguyễn Thị Diễm Kiều</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>
+                    </tr>
+                    <tr>
+                    <td>NV004</td>
+                        <td>Trương Khánh Hoà</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>NV005</td>
+                        <td>Nguyễn Duy Thiên</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>
+                    </tr>
+                        <td>NV006</td>
+                        <td>Nguyễn Thành Đạt</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select></td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>NV007</td>
+                        <td>Lê Hoàng Thiện</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>NV008</td>
+                        <td>Phùng Thị Phượng</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>NV009</td>
+                        <td>Phạm Ngọc Tuyển</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>NV010</td>
+                        <td>Võ Thị Thu Hằng</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>NV011</td>
+                        <td>Nguyễn Thị Hàn</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>NV012</td>
+                        <td>Lê Văn Quàng</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>NV013</td>
+                        <td>Nguyễn Văn Thuận</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>NV014</td>
+                        <td>Ngô Thanh Tú</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>NV015</td>
+                        <td>Trần Thị Tuyết Nhung</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>NV016</td>
+                        <td>Đặng Thị Bích Hà</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>NV018</td>
+                        <td>Nguyễn Văn Nhứt</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>NV019</td>
+                        <td>Lương Thị Kim Trang</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>NV020</td>
+                        <td>Phạm Kim Hồng Thảo</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>NV021</td>
+                        <td>Lê Thị Mai Quỳnh</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>NV022</td>
+                        <td>Nguyễn Thị Đàm</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>NV023</td>
+                        <td>Trần Thị Hương Thủy</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>NV024</td>
+                        <td>Phùng Thị Bảo Ngân</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>NV025</td>
+                        <td>Lê Minh Vũ</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>NV026</td>
+                        <td>Nguyễn Thị Mỹ Hiệp</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>NV027</td>
+                        <td>Nguyễn Thị Mộng Hà</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>NV028</td>
+                        <td>Ngụy Mai Phương</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>NV029</td>
+                        <td>Nguyễn Thị Hoa Lư</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>NV030</td>
+                        <td>Lê Nguyễn Thảo Sương</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>NV031</td>
+                        <td>Võ Thị Lan Anh</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>NV032</td>
+                        <td>Trần Minh Tân</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>NV033</td>
+                        <td>Lê Thị Thu Thủy</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>NV034</td>
+                        <td>Lê Thị Thanh Thủy</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>NV035</td>
+                        <td>Đỗ Thành Long</td>
+                        <td>
+                            <select class="form-select search-option">
+                                <option value="1">Đi làm</option>
+                                <option value="2">Không đi làm</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="larger">
+                        </td>   
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -12,3 +12,18 @@
     color: #000;
     cursor: pointer;
 }
+
+.btn-neutral {
+    color: #16192c;
+    background-color: #2bb438;
+    border-color: #e7eaf0;
+    color: #fff;
+}
+.btn-neutral:hover{
+    opacity:0.7;
+}
+.btn-neutral2 {
+    color: #16192c;
+    background-color: #ff1515;
+    border-color: #e7eaf0;
+}
