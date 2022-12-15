@@ -146,7 +146,8 @@
 															<input type="number" id="replyNumber" min="1000000"
 																data-bind="value:replyNumber"
 																class="form-control ungluong-sotien"
-																aria-describedby="inputGroup-sizing-sm">
+																aria-describedby="inputGroup-sizing-sm"
+															>
 														</div>
 														<div class="p-3">
 															<h3>Lý do</h3>
@@ -255,6 +256,10 @@
 	})
 
 	$('.ungluong-xacnhan').on('click', async function () {
+		if(Number($('.ungluong-sotien').val()) > 5000000) {
+			alert('Số tiền phải nhỏ hơn 5.000.000 VNĐ');
+			return;
+		}
 		await UngLuong();
 		alert('thành công!!!');
 	})

@@ -21,6 +21,7 @@
 }
 .search-btn:hover {
     background-color: #7b6bff;
+    color: white;
 }
 
 .input-group-append {

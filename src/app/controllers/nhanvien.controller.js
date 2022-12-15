@@ -50,7 +50,7 @@ class NhanVienController {
 			const nhanviens = await sequelize.query(sqlSearchNV, {
 				type: QueryTypes.EXEC,
 			});
-
+            console.log(nhanviens);
             //check giới tính
             for(let nv of nhanviens[0]) {
                 nv.GioiTinh = await common.checkGioiTinh(nv.GioiTinh);

@@ -1,7 +1,7 @@
 <div class=" d-flex flex-row-reverse ">
     <button type="button" class="btn  color-btn p-2" data-bs-toggle="modal"
         data-bs-target="#staticBackdrop">Xóa bảng </button>
-    <button type="button" class="btn   color-btn p-2" data-bs-toggle="modal"
+    <button type="button" class="btn capnhat-btn color-btn p-2" data-bs-toggle="modal"
         data-bs-target="#staticBackdrop2">Cập nhật bảng </button>
     {{!-- <button type="button" class="btn   color-btn p-2" data-bs-toggle="modal"
         data-bs-target="#staticBackdrop1">Thêm Bảng </button> --}}
@@ -539,3 +539,9 @@
         </div>
     </div>
 </div>
+
+<script>
+    $('capnhat-btn').click(function () {
+        alert('Cập nhật thành công');
+    });
+</script>

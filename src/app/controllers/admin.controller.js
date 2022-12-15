@@ -40,8 +40,6 @@ class AdminController {
             const bangLuong = await sequelize.query(procTinhLuongCongTy, {
                 type: QueryTypes.SELECT,
             });
-            
-            console.log(bangLuong);
     
             res.render('pages/admin/lap-bangluong', { 
                 style: '/pages/admin/lap-bangluong.css',
